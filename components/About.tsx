@@ -59,9 +59,9 @@ export default function About() {
             <div className="mt-8 w-full max-w-xl rounded-2xl bg-white p-8 shadow-2xl">
               <div className="space-y-4 text-base leading-6 text-[#464747]" style={{ fontFamily: 'Lumios Marker, sans-serif' }}>
                 <p>
-                  Tıp eğitimini Kocaeli Üniversitesi Tıp Fakültesi'nde
+                  Tıp eğitimini Kocaeli Üniversitesi Tıp Fakültesi&apos;nde
                   tamamlayan Mümtaz Aktaş, uzmanlık eğitimini İnönü
-                  Üniversitesi Tıp Fakültesi'nde gerçekleştirmiştir.
+                  Üniversitesi Tıp Fakültesi&apos;nde gerçekleştirmiştir.
                 </p>
 
                 <p>
@@ -72,7 +72,7 @@ export default function About() {
 
                 <p>
                   Rich Hospital, Olimpos Hastanesi, Yaşam Hastanesi ve
-                  Gaziantep'te çeşitli sağlık merkezlerinde görev almıştır.
+                  Gaziantep&apos;te çeşitli sağlık merkezlerinde görev almıştır.
                 </p>
 
                 <p>

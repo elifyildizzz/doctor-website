@@ -10,53 +10,68 @@ export default function InfectionTestsPage() {
       <Navbar />
       
       <main>
-        {/* Hero Section */}
-        <section className="relative w-full bg-cover bg-center bg-no-repeat py-12 md:py-20" style={{ backgroundImage: "url('/arka.png')" }}>
-          <div className="absolute inset-0 bg-white/85"></div>
-          
-          <div className="relative mx-auto max-w-7xl px-6">
-            <div className="text-center space-y-6">
-              <h1 className="text-3xl font-semibold text-[#464747] leading-tight md:text-4xl">
-                Enfeksiyon Testleri
-              </h1>
-              
-              <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#eaf1f4] mx-auto">
-                <img src="/icons/tube.svg" alt="" className="h-7 w-7 object-contain" />
-              </div>
-              
-              <p className="text-xl font-medium text-[#464747]/90 max-w-3xl mx-auto">
-                Çocuk hastalıklarının teşhisinde gerekli olan kan testleri ve enfeksiyon taramaları.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Content Section */}
-        <section className="py-20 bg-white">
+        <section className="py-14 md:py-20 bg-white">
           <div className="mx-auto max-w-4xl px-6">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-[#464747]/80 leading-8 mb-6">
-                Çocuklarda enfeksiyon hastalıkları hızlı teşhis ve tedavi gerektirir. Modern laboratuvar testleri ile doğru tanı konulabilir.
+            <h1 className="text-3xl font-semibold text-[#464747] leading-tight md:text-4xl text-center">
+              Enfeksiyon Testleri
+            </h1>
+
+            <div className="mt-10 space-y-7 text-lg text-[#464747]/80 leading-8 text-justify">
+              <p>
+                Enfeksiyon testleri, çocuklarda enfeksiyon belirtileri görüldüğünde altta yatan nedenin belirlenmesi için kullanılır. Bu testler, hastalığın hangi tür enfeksiyondan kaynaklandığını ortaya koyar ve uygun tedavi yaklaşımının planlanmasına yardımcı olur.
               </p>
-              
-              <h2 className="text-2xl font-semibold text-[#464747] mb-4 mt-8">Yaygın Testler</h2>
-              <ul className="text-[#464747]/80 leading-8 space-y-2">
-                <li>• Tam Kan Sayımı</li>
-                <li>• CRP (C-Reaktif Protein)</li>
-                <li>• Sedimantasyon</li>
-                <li>• Kan Kültürü</li>
-                <li>• İdrar Tahlili</li>
-                <li>• Boğaz Kültürü</li>
-              </ul>
-              
-              <h2 className="text-2xl font-semibold text-[#464747] mb-4 mt-8">Ne Zaman Gerekli?</h2>
-              <p className="text-[#464747]/80 leading-8 mb-6">
-                Ateş, halsizlik, iştahsızlık, karın ağrısı, solunum sıkıntısı gibi enfeksiyon belirtileri olduğunda testler yapılmalıdır.
+
+              <p>
+                Çocuklarda sık kullanılan enfeksiyon testleri şunlardır:
               </p>
-              
-              <h2 className="text-2xl font-semibold text-[#464747] mb-4 mt-8">Hızlı Teşhis</h2>
-              <p className="text-[#464747]/80 leading-8">
-                Kliniğimizde hızlı sonuç veren modern test cihazları bulunmaktadır. Acil durumlarda aynı gün içinde sonuç alınabilmektedir.
+
+              <p>
+                Kan testi:
+                <br />
+                Kan örneğinin incelenmesiyle enfeksiyona işaret eden antikorlar veya diğer biyokimyasal göstergeler değerlendirilir.
+              </p>
+
+              <p>
+                İdrar testi:
+                <br />
+                İdrarda bakteri veya enfeksiyon bulgularını tespit etmek amacıyla yapılır. İdrar dip çubuğu testi ve idrar kültürü gibi yöntemler kullanılabilir.
+              </p>
+
+              <p>
+                Boğaz kültürü:
+                <br />
+                Boğazdan pamuklu çubukla alınan örnekle bakteri veya diğer enfeksiyon etkenleri araştırılır.
+              </p>
+
+              <p>
+                Kan sayımı:
+                <br />
+                Kan hücrelerinin sayısı ve dağılımı incelenerek vücuttaki enfeksiyon varlığı hakkında bilgi edinilir.
+              </p>
+
+              <p>
+                Gaita (dışkı) testi:
+                <br />
+                İshal veya diğer sindirim sistemi sorunlarına neden olan bakteri, parazit ya da virüslerin tespiti için yapılır.
+              </p>
+
+              <p>
+                Bu testler, çocuğun genel sağlık durumu ve mevcut belirtiler değerlendirilerek planlanır. Hangi testlerin uygulanacağı; enfeksiyonun türüne, hastalığın şiddetine ve çocuğun yaşına göre belirlenir.
+              </p>
+
+              <p>
+                Kliniğimizde, hastalık ve enfeksiyonların tanısına hızlı şekilde yönlendiren ve gereksiz antibiyotik kullanımının önüne geçmeye yardımcı olan hızlı antijen testleri de uygulanmaktadır. Bunlar:
+                <br />
+                COVID-19 Testi
+                <br />
+                Influenza (Grip) Testi
+                <br />
+                Adenovirüs Solunum Yolu Testi
+                <br />
+                Hızlı Strep A Testi
+                <br />
+                <br />
+                Bu testler sayesinde doğru tanıya kısa sürede ulaşılması ve uygun tedavinin planlanması amaçlanır.
               </p>
             </div>
           </div>

@@ -4,81 +4,107 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const { currentLang, setLang, t } = useLanguage();
+
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    router.push('/');
+    setIsMenuOpen(false);
+    router.push("/");
   };
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const langBtnClass = (lang: Language) =>
+    `px-3 py-1 text-sm text-white transition-colors ${
+      currentLang === lang ? "bg-white/20" : "hover:bg-white/10"
+    }`;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#3d636d]/90 backdrop-blur-md">
       <div className="mx-auto flex h-24 max-w-7xl items-center px-6">
-        
         {/* LEFT: LOGO */}
         <div className="flex items-center">
-          <Image
-            src="/logo2.png"
-            alt="Clinic Logo"
-            width={210}
-            height={70}
-            priority
-            className="object-contain"
-          />
+          <Link href="/" onClick={handleHomeClick} aria-label="Home">
+            <Image
+              src="/logo2.png"
+              alt="Clinic Logo"
+              width={210}
+              height={70}
+              priority
+              className="object-contain"
+            />
+          </Link>
         </div>
 
-        {/* RIGHT BLOCK: MENU + LANGUAGE SWITCHER + CTA BUTTON */}
+        {/* RIGHT */}
         <div className="ml-auto flex items-center gap-10">
-          
-          {/* DESKTOP NAVIGATION MENU */}
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-10 text-white text-base">
             <Link href="/" className="hover:opacity-80" onClick={handleHomeClick}>
-              Anasayfa
+              {t.nav.home}
             </Link>
             <Link href="/doctor" className="hover:opacity-80">
-              Doktorumuz
+              {t.nav.doctor}
             </Link>
             <Link href="/services" className="hover:opacity-80">
-              Hizmetler
+              {t.nav.services}
             </Link>
-            <Link href="#iletisim" className="hover:opacity-80">
-              İletişim
+            <Link href="/contact" className="hover:opacity-80">
+              {t.nav.contact}
             </Link>
           </nav>
 
-          {/* MOBILE HAMBURGER BUTTON */}
+          {/* MOBILE HAMBURGER */}
           <button
             onClick={toggleMenu}
             className="md:hidden flex flex-col gap-1.5 p-2"
             aria-label="Menüyü aç/kapat"
           >
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </button>
 
-          {/* LANGUAGE SWITCHER (UI ONLY FOR NOW) */}
+          {/* LANGUAGE SWITCHER (DESKTOP) */}
           <div className="hidden md:flex overflow-hidden rounded-full border border-white/40">
-            <button className="px-3 py-1 text-sm text-white bg-white/20">
+            <button type="button" className={langBtnClass("TR")} onClick={() => setLang("TR")}>
               TR
             </button>
-            <button className="px-3 py-1 text-sm text-white">
+            <button type="button" className={langBtnClass("EN")} onClick={() => setLang("EN")}>
               EN
             </button>
-            <button className="px-3 py-1 text-sm text-white">
+            <button type="button" className={langBtnClass("RU")} onClick={() => setLang("RU")}>
               RU
             </button>
           </div>
 
-          {/* CALL TO ACTION BUTTON */}
-          <button className="hidden md:block rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100">
-            Randevu Al
-          </button>
+          {/* CTA BUTTON */}
+          <Link
+            href="/contact"
+            className="hidden md:block rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100"
+          >
+            {t.nav.appointment}
+          </Link>
         </div>
       </div>
 
@@ -86,37 +112,51 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-[#3d636d]/95 backdrop-blur-md">
           <nav className="flex flex-col px-6 py-4 space-y-4 text-white text-base">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="hover:opacity-80 py-2 border-b border-white/20"
               onClick={handleHomeClick}
             >
-              Anasayfa
+              {t.nav.home}
             </Link>
-            <Link 
-              href="/doctor" 
+            <Link
+              href="/doctor"
               className="hover:opacity-80 py-2 border-b border-white/20"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
             >
-              Doktorumuz
+              {t.nav.doctor}
             </Link>
-            <Link 
-              href="/services" 
+            <Link
+              href="/services"
               className="hover:opacity-80 py-2 border-b border-white/20"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
             >
-              Hizmetler
+              {t.nav.services}
             </Link>
-            <Link 
-              href="#iletisim" 
-              className="hover:opacity-80 py-2"
-              onClick={() => setIsMenuOpen(false)}
+            <Link href="/contact" className="hover:opacity-80 py-2" onClick={closeMenu}>
+              {t.nav.contact}
+            </Link>
+
+            {/* LANGUAGE SWITCHER (MOBILE) */}
+            <div className="flex overflow-hidden rounded-full border border-white/40 w-fit">
+              <button type="button" className={langBtnClass("TR")} onClick={() => setLang("TR")}>
+                TR
+              </button>
+              <button type="button" className={langBtnClass("EN")} onClick={() => setLang("EN")}>
+                EN
+              </button>
+              <button type="button" className={langBtnClass("RU")} onClick={() => setLang("RU")}>
+                RU
+              </button>
+            </div>
+
+            <Link
+              href="/contact"
+              className="mt-2 rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100 w-fit"
+              onClick={closeMenu}
             >
-              İletişim
+              {t.nav.appointment}
             </Link>
-            <button className="mt-4 rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100">
-              Randevu Al
-            </button>
           </nav>
         </div>
       )}

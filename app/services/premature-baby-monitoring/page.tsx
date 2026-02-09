@@ -18,23 +18,23 @@ export default function PrematureBabyMonitoringPage() {
 
             <div className="mt-10 space-y-7 text-lg text-[#464747]/80 leading-8 text-justify">
               <p>
-                Prematüre bebekler, normal doğumda dünyaya gelen bebeklere göre daha erken bir zamanda doğarlar. Gebeliğin 37. haftasından önce doğan bebeklere prematüre bebek denmektedir. Bu bebekler, henüz tam olarak gelişmedikleri için, bazı sağlık sorunları yaşayabilirler. Yaşlarının ilk günlerini, bazen haftalarını anneden ayrı küvozde, yenidoğan yoğun bakım ünitelerinde geçirmektedirler. Bu yavruların dünyaya gelişinin özel olması gibi izlemlerinin de özel ve daha dikkatli yapılması gerekir. Bu nedenle, prematüre bebeklerin doğumdan hemen sonra yakından takip edilmesi gerekmektedir.
+                Prematüre bebekler, gebeliğin 37. haftasından önce dünyaya gelen bebeklerdir. Bu bebekler, gelişimlerini henüz tamamlamadan doğdukları için bazı sağlık sorunlarıyla karşılaşabilirler. Yaşamlarının ilk günlerini, bazen haftalarını annelerinden ayrı olarak küvözde ve yenidoğan yoğun bakım ünitelerinde geçirebilirler. Prematüre bebeklerin dünyaya gelişi nasıl özel ise, izlem süreçlerinin de daha dikkatli ve planlı şekilde yürütülmesi gerekir. Bu nedenle doğumdan hemen sonra yakından takip edilmeleri büyük önem taşır.
               </p>
 
               <p>
-                Prematüre bebeklerin izlenmesi, Serap Doktor, yoğun bakım hemşireleri ve diğer sağlık uzmanları tarafından yapılır. İzlem, doğumdan sonra hemen başlar ve bebeklerin durumlarının sıkı bir şekilde takip edilmesini içerir. Bu izlemler, bebeklerin kan basıncı, kalp atışları, solunumları, kilo alımı, aşıları ve beslenme düzeni gibi birçok faktörü içerir.
+                Prematüre bebeklerin izlemi; hekimler, yenidoğan yoğun bakım hemşireleri ve diğer sağlık uzmanları tarafından yürütülür. İzlem süreci doğumdan hemen sonra başlar ve bebeğin sağlık durumunun düzenli ve ayrıntılı şekilde değerlendirilmesini kapsar. Bu değerlendirmelerde kan basıncı, kalp atım hızı, solunum durumu, kilo alımı, aşılar ve beslenme düzeni gibi pek çok parametre takip edilir.
               </p>
 
               <p>
-                Bebeklerin izlenmesi, doğumdan sonraki ilk birkaç gün boyunca özellikle önemlidir. Bu süre zarfında, bebeklerin vücut sıcaklıkları, kan şekeri seviyeleri ve diğer birçok faktör de izlenir. Prematüre bebeklerde solunum sorunlarını sıkça görülebildiğinden, bu bebeklerin solunumlarını, akciğer gelişimini ve enfeksiyon varlığını yakından takip etmek önemlidir. Solunum problemleri varsa, bebekler solunum cihazları ile destek gerekebilir.
+                Doğumdan sonraki ilk günler prematüre bebekler için özellikle kritik bir dönemdir. Bu süreçte vücut sıcaklığı, kan şekeri düzeyi ve enfeksiyon bulguları yakından izlenir. Prematüre bebeklerde solunum sorunları daha sık görülebildiğinden; solunum, akciğer gelişimi ve olası enfeksiyonlar dikkatle değerlendirilir. Gerekli durumlarda solunum desteği sağlanabilir.
               </p>
 
               <p>
-                Prematüre bebeklerin izlemi, doğumdan sonra birkaç hafta ya da aylar boyunca devam edebilir. Bebeklerin gelişimi, kilo alımı ve beslenme durumları, Serap Doktor tarafından sürekli olarak takip edilir. Bazı prematüre bebeklerde gelişim geriliği veya diğer sağlık sorunları görülebilir. Bu durumda, bebeklerin tedavisi özel olarak planlanır.
+                Prematüre bebeklerin izlemi, doğumdan sonraki haftalar hatta aylar boyunca devam edebilir. Bu süreçte bebeklerin büyüme ve gelişmeleri, kilo alımları ve beslenme durumları düzenli aralıklarla değerlendirilir. Bazı prematüre bebeklerde gelişim geriliği veya ek sağlık sorunları görülebileceğinden, takip ve tedavi süreçleri bireysel olarak planlanır.
               </p>
 
               <p>
-                Aşık takviminin farklı olmasının yanısıra, gelişimleri daha sık aralıklarla izlenmekte olup ve bazı testlerin ve göz, kalp, nöroloji gibi kontrollerinin daha ayrıntılı yapılması gerekir. Tüm bu izlemler özel bir takvim dahilinde ve ehil ellerde yapılmalıdır. Kliniğimizde de prematüre bebeklerin izlemi ayrıntılı şekilde yapılmaktadır.
+                Aşı takviminin farklı olması, gelişimin daha sık aralıklarla izlenmesi ve göz, kalp, nöroloji gibi alanlarda daha ayrıntılı kontrollerin gerekmesi prematüre bebek izleminin önemli parçalarıdır. Tüm bu değerlendirmeler özel bir izlem programı dâhilinde ve deneyimli sağlık ekipleri tarafından yapılmalıdır. Kliniğimizde prematüre bebeklerin izlemi ayrıntılı ve planlı şekilde sürdürülmektedir.
               </p>
             </div>
           </div>

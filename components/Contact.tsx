@@ -1,7 +1,7 @@
-// components/Contact.tsx
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type InfoCard = {
   label: string;
@@ -10,19 +10,21 @@ type InfoCard = {
 };
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   const cards: InfoCard[] = [
     {
-      label: "Telefon",
+      label: t.contact.phone,
       value: "+90 5xx xxx xx xx",
       href: "tel:+905XXXXXXXXX",
     },
     {
-      label: "E-posta",
+      label: t.contact.email,
       value: "info@ornekklinik.com",
       href: "mailto:info@ornekklinik.com",
     },
     {
-      label: "Adres",
+      label: t.contact.address,
       value: "Antalya / Kemer (Mahalle, Sokak, No: …)",
     },
   ];
@@ -34,7 +36,6 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20 min-h-[calc(100vh-96px)] grid items-center">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
-          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,10 +44,10 @@ export default function Contact() {
             className="flex flex-col"
           >
             <h2 className="text-4xl font-semibold text-[#464747] leading-tight">
-              İletişim
+              {t.contact.title}
             </h2>
             <p className="mt-3 text-lg font-medium text-[#464747]/90">
-              Randevu ve danışma için aşağıdaki kanallardan bize ulaşabilirsiniz.
+              {t.contact.subtitle}
             </p>
 
             <div className="mt-8 grid gap-4 sm:gap-5">
@@ -77,7 +78,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* RIGHT (MAP) */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,9 +87,8 @@ export default function Contact() {
           >
             <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
               <div className="relative h-[420px] w-full md:h-[520px]">
-                {/* Google Maps Embed (replace q= with exact address) */}
                 <iframe
-                  title="Harita"
+                  title={t.contact.mapTitle}
                   src="https://www.google.com/maps?q=Kemer%20Antalya&output=embed"
                   width="100%"
                   height="100%"

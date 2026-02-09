@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full min-h-[calc(100vh-96px)] overflow-hidden">
-      {/* Background image (cover) */}
       <Image
         src="/arka_plan.png"
         alt=""
@@ -15,12 +17,9 @@ export default function Hero() {
         className="object-cover object-center scale-125"
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-white/40" />
 
-      {/* Content */}
       <div className="relative mx-auto max-w-7xl min-h-[calc(100vh-96px)] grid items-center gap-10 px-6 md:grid-cols-2">
-        {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,26 +27,27 @@ export default function Hero() {
           className="max-w-xl"
         >
           <h1 className="text-3xl font-bold text-[#464747] md:text-4xl">
-            Uzm. Dr. Mümtaz Aktaş
+            {t.hero.name}
           </h1>
 
           <p className="mt-3 text-xl font-semibold text-[#3d636d]">
-            Çocuk Sağlığı ve Hastalıkları Uzmanı
+            {t.hero.role}
           </p>
 
           <p className="mt-4 text-lg leading-8 text-[#1F2937]">
-            Bebek, çocuk ve ergen sağlığında tanı, takip ve tedavi süreçlerinde
-            bilimsel ve güvenilir sağlık hizmeti sunmaktadır.
+            {t.hero.desc}
           </p>
 
           <div className="mt-8">
-            <button className="rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]">
-              İletişime Geç
-            </button>
+            <a
+              href="#iletisim"
+              className="inline-block rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]"
+            >
+              {t.hero.cta}
+            </a>
           </div>
         </motion.div>
 
-        {/* RIGHT */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <Image
             src="/doctor.png"
-            alt="Uzm. Dr. Mümtaz Aktaş"
+            alt={t.hero.name}
             width={900}
             height={1100}
             priority
@@ -64,8 +64,7 @@ export default function Hero() {
           />
         </motion.div>
       </div>
-      
-      {/* Wave at bottom */}
+
       <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 120"

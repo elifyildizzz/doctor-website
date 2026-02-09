@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,18 +21,8 @@ const lumiosMarker = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Uzm. Dr. Mümtaz Aktaş - Çocuk Sağlığı ve Hastalıkları Uzmanı -Antalya/Kemer",
+  title: "Uzm. Dr. Mümtaz Aktaş - Çocuk Sağlığı ve Hastalıkları Uzmanı - Antalya/Kemer",
   description: "Doctor official website",
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -41,8 +32,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${lumiosMarker.variable} antialiased`}>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${lumiosMarker.variable} antialiased`}
+      >
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

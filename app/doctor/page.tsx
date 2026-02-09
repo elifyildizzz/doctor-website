@@ -28,7 +28,7 @@ export default function DoktorumuzPage() {
                 
                 <div className="space-y-4 text-lg text-[#464747]/80 leading-8">
                   <p>
-                    Tıp eğitimini Kocaeli Üniversitesi Tıp Fakültesi'nde tamamlayan Mümtaz Aktaş, uzmanlık eğitimini İnönü Üniversitesi Tıp Fakültesi'nde gerçekleştirmiştir.
+                    Tıp eğitimini Kocaeli Üniversitesi Tıp Fakültesi&apos;nde tamamlayan Mümtaz Aktaş, uzmanlık eğitimini İnönü Üniversitesi Tıp Fakültesi&apos;nde gerçekleştirmiştir.
                   </p>
                   <p>
                     Uzun yıllardır çocuk sağlığı ve hastalıkları alanında hizmet veren Dr. Aktaş, özellikle prematüre bebek takibi, aşı uygulamaları ve büyüme-gelişme monitorizasyonu konularında uzmanlaşmıştır.
