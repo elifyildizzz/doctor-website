@@ -46,7 +46,7 @@ export default function Hero() {
 
             <div className="mt-4">
               <a
-                href="#iletisim"
+                href="/contact"
                 className="inline-block rounded-full bg-[#3d636d] px-4 py-2 text-xs font-semibold text-white hover:bg-[#345459]"
               >
                 {t.hero.cta}
@@ -93,7 +93,7 @@ export default function Hero() {
 
           <div className="mt-8">
             <a
-              href="#iletisim"
+              href="/contact"
               className="inline-block rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]"
             >
               {t.hero.cta}

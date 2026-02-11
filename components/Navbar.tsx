@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { currentLang, setLang, t } = useLanguage();
@@ -24,7 +25,11 @@ export default function Navbar() {
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    router.push("/");
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    router.push("/", { scroll: true });
   };
 
   const closeMenu = () => setIsMenuOpen(false);

@@ -32,10 +32,10 @@ export default function Footer() {
               <Image
                 src="/logo2.png"
                 alt={t.about.name}
-                width={180}
-                height={60}
+                width={230}
+                height={77}
                 priority
-                className="object-contain"
+                className="h-auto w-[210px] object-contain sm:w-[230px]"
               />
             </div>
 
