@@ -132,27 +132,33 @@ const translations: Translations = {
       items: {
         healthyChild: {
           title: "Sağlam Çocuk İzlemi",
-          desc: "Çocukların büyüme ve gelişimini düzenli olarak takip ediyoruz.",
+          desc:
+            "Yenidoğan bebeklerden ergenlere kadar tüm çocukların büyüme ve gelişim takibi, aşı programları ve koruyucu sağlık hizmetleri.",
         },
         prematureBaby: {
           title: "Prematüre Bebek İzlemi",
-          desc: "Erken doğan bebeklerin özel takibi ve bakımı.",
+          desc:
+            "Erken doğan bebeklerin özel takibi, gelişim değerlendirmesi ve beslenme danışmanlığı hizmetleri.",
         },
         vaccination: {
           title: "Aşı Takibi",
-          desc: "Çocuklar için eksiksiz aşı takip programı.",
+          desc:
+            "Milli aşı takvimine uygun olarak tüm aşıların zamanında ve güvenli bir şekilde uygulanması.",
         },
         infectionTests: {
           title: "Enfeksiyon Testleri",
-          desc: "Hızlı ve güvenilir enfeksiyon tespit testleri.",
+          desc:
+            "Çocuk hastalıklarının teşhisinde gerekli olan kan testleri ve enfeksiyon taramaları.",
         },
         bloodLab: {
           title: "Kan Alma ve Laboratuvar Testleri",
-          desc: "Gerekli kan testleri ve laboratuvar hizmetleri.",
+          desc:
+            "Klinik bünyesinde kan alma işlemi ve gerekli laboratuvar testlerinin güvenli bir şekilde yapılması.",
         },
         breastfeeding: {
           title: "Emzirme Danışmanlığı",
-          desc: "Doğru emzirme teknikleri ve danışmanlık hizmeti.",
+          desc:
+            "Annelere doğru emzirme teknikleri, süt üretimi ve beslenme konusunda profesyonel danışmanlık hizmeti.",
         },
       },
     },
@@ -273,27 +279,33 @@ const translations: Translations = {
       items: {
         healthyChild: {
           title: "Healthy Child Monitoring",
-          desc: "We regularly monitor children's growth and development.",
+          desc:
+            "Comprehensive growth and development follow-up from newborn period to adolescence, including preventive pediatric care.",
         },
         prematureBaby: {
           title: "Premature Baby Monitoring",
-          desc: "Special follow-up and care for premature babies.",
+          desc:
+            "Individualized follow-up for preterm babies with developmental evaluation and feeding guidance.",
         },
         vaccination: {
           title: "Vaccination Tracking",
-          desc: "A complete vaccination tracking program for children.",
+          desc:
+            "Timely and safe implementation of childhood vaccines in line with national immunization schedules.",
         },
         infectionTests: {
           title: "Infection Tests",
-          desc: "Fast and reliable infection detection tests.",
+          desc:
+            "Diagnostic blood and infection screening tests required for accurate evaluation of pediatric illnesses.",
         },
         bloodLab: {
           title: "Blood Collection and Laboratory Tests",
-          desc: "Necessary blood tests and laboratory services.",
+          desc:
+            "Safe blood collection and laboratory sample handling within the clinic setting.",
         },
         breastfeeding: {
           title: "Breastfeeding Consultation",
-          desc: "Proper breastfeeding techniques and consultation service.",
+          desc:
+            "Professional support for breastfeeding techniques, milk supply management, and infant nutrition.",
         },
       },
     },
@@ -414,27 +426,33 @@ const translations: Translations = {
       items: {
         healthyChild: {
           title: "Мониторинг здорового ребенка",
-          desc: "Мы регулярно отслеживаем рост и развитие детей.",
+          desc:
+            "Комплексное наблюдение за ростом и развитием детей от периода новорожденности до подросткового возраста.",
         },
         prematureBaby: {
           title: "Наблюдение недоношенных детей",
-          desc: "Особое наблюдение и уход за недоношенными детьми.",
+          desc:
+            "Индивидуальное наблюдение недоношенных детей с оценкой развития и рекомендациями по питанию.",
         },
         vaccination: {
           title: "Отслеживание вакцинации",
-          desc: "Полная программа отслеживания вакцинации для детей.",
+          desc:
+            "Своевременная и безопасная вакцинация детей в соответствии с национальным календарем прививок.",
         },
         infectionTests: {
           title: "Тесты на инфекции",
-          desc: "Быстрые и надежные тесты для выявления инфекций.",
+          desc:
+            "Необходимые анализы крови и скрининг инфекций для точной диагностики детских заболеваний.",
         },
         bloodLab: {
           title: "Забор крови и лабораторные анализы",
-          desc: "Необходимые анализы крови и лабораторные услуги.",
+          desc:
+            "Безопасный забор крови и передача лабораторных образцов в условиях клиники.",
         },
         breastfeeding: {
           title: "Консультация по грудному вскармливанию",
-          desc: "Правильные техники и консультационные услуги.",
+          desc:
+            "Профессиональная поддержка по технике грудного вскармливания, лактации и питанию младенца.",
         },
       },
     },

@@ -24,15 +24,15 @@ export default function DoktorumuzPage() {
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
               {/* LEFT - Content */}
               <div className="space-y-6">
-                <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+                <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
                   {t.about.name}
                 </h1>
                 
-                <p className="text-base font-medium text-[#464747]/90 sm:text-lg md:text-xl">
+                <p className="text-base font-medium text-[#464747]/90 sm:text-lg md:text-lg">
                   {t.about.role}
                 </p>
                 
-                <div className="space-y-3 text-base leading-7 text-[#464747]/80 md:space-y-4 md:text-lg md:leading-8">
+                <div className="space-y-3 text-base leading-7 text-[#464747]/80 md:space-y-4 md:text-base md:leading-7">
                   <p>{t.about.p1}</p>
                   <p>{t.about.p2}</p>
                   <p>{t.about.p4}</p>
@@ -46,7 +46,7 @@ export default function DoktorumuzPage() {
                   alt={t.about.name}
                   width={1100}
                   height={1300}
-                  className="h-auto w-full max-w-[360px] rounded-2xl object-cover shadow-2xl sm:max-w-[460px] md:max-w-xl"
+                  className="h-auto w-full max-w-[360px] rounded-2xl object-cover shadow-2xl sm:max-w-[460px] md:max-w-[420px] lg:max-w-xl"
                 />
               </div>
             </div>
@@ -56,14 +56,14 @@ export default function DoktorumuzPage() {
         {/* Experience Section */}
         <section className="bg-[#f8f9fa] py-12 md:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h2 className="mb-8 text-center text-2xl font-semibold text-[#464747] sm:text-3xl md:mb-12">
+            <h2 className="mb-8 text-center text-2xl font-semibold text-[#464747] sm:text-3xl md:mb-12 md:text-3xl">
               {experience.title}
             </h2>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {experience.cards.map((card) => (
                 <div key={card.title} className="rounded-2xl bg-white p-5 shadow-sm md:p-6">
-                  <h3 className="mb-3 text-lg font-semibold text-[#3d636d] md:text-xl">
+                  <h3 className="mb-3 text-lg font-semibold text-[#3d636d] md:text-lg">
                     {card.title}
                   </h3>
                   <ul className="space-y-2 text-sm text-[#464747]/80 md:text-base">

@@ -26,15 +26,15 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-xl"
         >
-          <h1 className="text-2xl font-bold text-[#464747] sm:text-3xl md:text-4xl">
+          <h1 className="text-2xl font-bold text-[#464747] sm:text-3xl md:text-[2rem]">
             {t.hero.name}
           </h1>
 
-          <p className="mt-3 text-base font-semibold text-[#3d636d] sm:text-lg md:text-xl">
+          <p className="mt-3 text-base font-semibold text-[#3d636d] sm:text-lg md:text-lg">
             {t.hero.role}
           </p>
 
-          <p className="mt-4 text-base leading-7 text-[#1F2937] md:text-lg md:leading-8">
+          <p className="mt-4 text-base leading-7 text-[#1F2937] md:text-base md:leading-7">
             {t.hero.desc}
           </p>
 

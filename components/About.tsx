@@ -33,7 +33,7 @@ export default function About() {
               width={1400}
               height={1600}
               priority
-              className="h-auto w-full max-w-[360px] object-cover sm:max-w-[460px] md:h-[85vh] md:max-w-none lg:h-[100vh]"
+              className="h-auto w-full max-w-[360px] object-cover sm:max-w-[460px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
             />
           </motion.div>
 
@@ -45,11 +45,11 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-start"
           >
-            <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl">
+            <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-3xl">
               {t.about.name}
             </h2>
 
-            <p className="mt-2 text-base font-medium text-white/90 sm:text-lg md:mt-3 md:text-xl">
+            <p className="mt-2 text-base font-medium text-white/90 sm:text-lg md:mt-3 md:text-lg">
               {t.about.role}
             </p>
 

@@ -38,15 +38,15 @@ export default function Services() {
             transition={{ duration: 0.4 }}
             className="max-w-xl"
           >
-            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
               {t.services.title}
             </h2>
 
-            <p className="mt-4 text-base leading-7 text-[#464747]/80 md:mt-5 md:text-lg md:leading-8">
+            <p className="mt-4 text-base leading-7 text-[#464747]/80 md:mt-5 md:text-base md:leading-7">
               {t.services.p1}
             </p>
 
-            <p className="mt-3 text-base leading-7 text-[#464747]/80 md:mt-4 md:text-lg md:leading-8">
+            <p className="mt-3 text-base leading-7 text-[#464747]/80 md:mt-4 md:text-base md:leading-7">
               {t.services.p2}
             </p>
 
@@ -74,7 +74,7 @@ export default function Services() {
                 <button
                   key={s.key}
                   onClick={() => (window.location.href = s.href)}
-                  className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-4 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 md:h-[230px]"
+                  className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-4 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 md:h-[220px] lg:h-[230px]"
                 >
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-5 sm:h-16 sm:w-16">
                     <img src={s.icon} alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />

@@ -43,15 +43,15 @@ export default function Clinic() {
             transition={{ duration: 0.5 }}
             className="relative z-10"
           >
-            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
               {t.clinic.title}
             </h2>
 
-            <p className="mt-2 text-base font-medium text-[#ffffff] sm:text-lg md:mt-3 md:text-xl">
+            <p className="mt-2 text-base font-medium text-[#ffffff] sm:text-lg md:mt-3 md:text-lg">
               {t.clinic.location}
             </p>
 
-            <p className="mt-4 max-w-md text-sm leading-6 text-[#464747]/80 sm:text-base md:mt-6 md:text-lg md:leading-7">
+            <p className="mt-4 max-w-md text-sm leading-6 text-[#464747]/80 sm:text-base md:mt-6 md:text-base md:leading-7">
               {t.clinic.desc}
             </p>
 

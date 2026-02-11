@@ -30,11 +30,11 @@ export default function ServicesPage() {
           
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="text-center space-y-6">
-              <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+              <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
                 {t.services.title}
               </h1>
               
-              <p className="mx-auto max-w-3xl text-base font-medium text-[#464747]/90 sm:text-lg md:text-xl">
+              <p className="mx-auto max-w-3xl text-base font-medium text-[#464747]/90 sm:text-lg md:text-lg">
                 {t.services.p1}
               </p>
             </div>
@@ -47,14 +47,14 @@ export default function ServicesPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
               {services.map((service) => (
                 <Link key={service.key} href={service.href} className="block">
-                  <div className="flex h-full min-h-[220px] cursor-pointer flex-col rounded-2xl bg-white p-5 shadow-sm transition-shadow hover:shadow-lg md:min-h-[260px] md:p-6">
+                  <div className="flex h-full min-h-[220px] cursor-pointer flex-col rounded-2xl bg-white p-5 shadow-sm transition-shadow hover:shadow-lg md:min-h-[240px] md:p-6 lg:min-h-[250px]">
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf1f4] md:mb-5 md:h-16 md:w-16">
                       <img src={service.icon} alt="" className="h-6 w-6 object-contain md:h-7 md:w-7" />
                     </div>
-                    <h3 className="mb-3 text-lg font-semibold text-[#464747] md:text-xl">
+                    <h3 className="mb-3 text-lg font-semibold text-[#464747] md:text-lg">
                       {t.services.items[service.key].title}
                     </h3>
-                    <p className="flex-1 text-sm leading-6 text-[#464747]/80 md:text-base md:leading-7">
+                    <p className="flex-1 text-sm leading-6 text-[#464747]/80 md:text-sm md:leading-6 lg:text-base lg:leading-7">
                       {t.services.items[service.key].desc}
                     </p>
                   </div>

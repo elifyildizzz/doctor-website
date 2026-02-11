@@ -43,10 +43,10 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="flex flex-col"
           >
-            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
               {t.contact.title}
             </h2>
-            <p className="mt-2 text-base font-medium text-[#464747]/90 md:mt-3 md:text-lg">
+            <p className="mt-2 text-base font-medium text-[#464747]/90 md:mt-3 md:text-base">
               {t.contact.subtitle}
             </p>
 
@@ -85,7 +85,7 @@ export default function Contact() {
             className="w-full"
           >
             <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
-              <div className="relative h-[320px] w-full sm:h-[380px] md:h-[520px]">
+              <div className="relative h-[320px] w-full sm:h-[380px] md:h-[460px]">
                 <iframe
                   title={t.contact.mapTitle}
                   src="https://www.google.com/maps?q=Kemer%20Antalya&output=embed"

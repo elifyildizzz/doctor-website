@@ -47,10 +47,10 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col"
             >
-              <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+              <h1 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
                 {t.contact.title}
               </h1>
-              <p className="mt-3 text-base text-[#464747]/90 md:mt-4 md:text-lg">
+              <p className="mt-3 text-base text-[#464747]/90 md:mt-4 md:text-base">
                 {t.contact.subtitle}
               </p>
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
               className="w-full"
             >
               <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
-                <div className="relative h-[320px] w-full sm:h-[380px] md:h-[520px]">
+                <div className="relative h-[320px] w-full sm:h-[380px] md:h-[460px]">
                   {/* Google Maps Embed (replace q= with exact address) */}
                   <iframe
                     title={t.contact.mapTitle}

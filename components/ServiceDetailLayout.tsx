@@ -27,11 +27,11 @@ export default function ServiceDetailLayout({
       <main>
         <section className="bg-white py-10 md:py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <h1 className="text-center text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
+            <h1 className="text-center text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-3xl">
               {title}
             </h1>
 
-            <div className="mt-8 space-y-5 text-justify text-base leading-7 text-[#464747]/80 md:mt-10 md:space-y-7 md:text-lg md:leading-8">
+            <div className="mt-8 space-y-5 text-justify text-base leading-7 text-[#464747]/80 md:mt-10 md:space-y-7 md:text-base md:leading-7">
               {paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

@@ -149,7 +149,7 @@ export default function Reviews() {
           transition={{ duration: 0.45 }}
           className="text-center"
         >
-          <h2 className="text-2xl font-light text-[#464747] sm:text-3xl md:text-4xl">
+          <h2 className="text-2xl font-light text-[#464747] sm:text-3xl md:text-3xl">
             {t.reviews.title}
           </h2>
     
@@ -189,7 +189,7 @@ export default function Reviews() {
                   transition={{ duration: 0.35, delay: idx * 0.03 }}
                   className="snap-start shrink-0"
                 >
-                  <div data-card="1" className="relative w-[280px] sm:w-[340px] md:w-[380px]">
+                  <div data-card="1" className="relative w-[280px] sm:w-[340px] md:w-[360px]">
                     <div
                       className="absolute -top-2 left-2 h-full w-full rounded-3xl"
                       style={{ backgroundColor: color, opacity: 0.25 }}
