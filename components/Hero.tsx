@@ -33,12 +33,12 @@ export default function Hero() {
           <p className="mt-1 text-base font-semibold text-[#3d636d]">{t.hero.role}</p>
         </div>
 
-        <div className="mt-1 grid grid-cols-[1fr_1.08fr] items-start gap-1 md:mt-0 md:grid-cols-2 md:items-center md:gap-10">
+        <div className="mt-4 grid grid-cols-[1fr_1.08fr] items-stretch gap-1 md:mt-0 md:grid-cols-2 md:items-center md:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-none pr-1 md:max-w-xl"
+            className="flex h-full max-w-none flex-col pr-1 md:max-w-xl"
           >
             <h1 className="hidden text-xl font-bold leading-tight text-[#464747] sm:text-3xl md:block md:text-[2rem]">
               {t.hero.name}
@@ -52,7 +52,7 @@ export default function Hero() {
               {t.hero.desc}
             </p>
 
-            <div className="mt-3 md:mt-8">
+            <div className="mt-auto pb-1 md:mt-8 md:pb-0">
               <a
                 href="#iletisim"
                 className="inline-block rounded-full bg-[#3d636d] px-4 py-2 text-xs font-semibold text-white hover:bg-[#345459] sm:text-sm md:px-7 md:py-3"
@@ -66,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="-mt-2 flex items-start justify-end md:mt-0 md:items-end"
+            className="-mt-2 flex h-full items-end justify-end md:mt-0 md:items-end"
           >
             <Image
               src="/doctor.png"
@@ -85,7 +85,7 @@ export default function Hero() {
           viewBox="0 0 1440 120"
           fill="#f8f9fa"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-full md:h-40"
+          className="h-20 w-full md:h-40"
           preserveAspectRatio="none"
         >
           <path
