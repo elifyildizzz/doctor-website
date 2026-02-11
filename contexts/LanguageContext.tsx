@@ -265,7 +265,7 @@ const translations: Translations = {
       name: "Specialist Dr. Mümtaz Aktaş",
       role: "Pediatric Health and Diseases Specialist",
       desc:
-        "Provides scientific and reliable healthcare services for infants, children, and adolescents during diagnosis, follow-up, and treatment processes.",
+        "Scientific and reliable healthcare services are provided for infants, children, and adolescents during diagnosis, follow-up, and treatment processes. At our clinic in Antalya Kemer, growth and development follow-up, preventive medicine practices, and the evaluation of childhood diseases are carried out meticulously.",
       cta: "Contact",
       slogan: '"Your children’s health is our top priority"',
     },
@@ -412,7 +412,7 @@ const translations: Translations = {
       name: "Врач-специалист Мюмтаз Акташ",
       role: "Специалист по детскому здоровью и болезням",
       desc:
-        "Оказывает научно обоснованную и надежную медицинскую помощь детям и подросткам на этапах диагностики, наблюдения и лечения.",
+        "На этапах диагностики, наблюдения и лечения младенцам, детям и подросткам предоставляется научно обоснованная и надежная медицинская помощь. В нашей клинике в Анталье, Кемер, с особой тщательностью проводятся наблюдение за ростом и развитием, профилактические медицинские практики и оценка детских заболеваний.",
       cta: "Связаться",
       slogan: '"Здоровье ваших детей — наш главный приоритет"',
     },
