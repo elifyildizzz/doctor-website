@@ -66,7 +66,7 @@ export default function Hero() {
               width={900}
               height={1100}
               priority
-              className="h-auto w-[178%] max-w-none -mr-[4.5rem] object-contain"
+              className="h-auto w-[186%] max-w-none -mr-[5.5rem] object-contain"
             />
           </motion.div>
         </div>
