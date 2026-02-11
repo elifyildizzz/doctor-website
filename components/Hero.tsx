@@ -33,7 +33,7 @@ export default function Hero() {
           <p className="mt-1 text-base font-semibold text-[#3d636d]">{t.hero.role}</p>
         </div>
 
-        <div className="mt-3 grid grid-cols-[1fr_1.08fr] items-center gap-1">
+        <div className="mt-6 grid grid-cols-[1fr_1.08fr] items-center gap-1">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Hero() {
               width={900}
               height={1100}
               priority
-              className="h-auto w-[160%] max-w-none -mr-10 object-contain"
+              className="h-auto w-[178%] max-w-none -mr-[4.5rem] object-contain"
             />
           </motion.div>
         </div>
