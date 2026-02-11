@@ -65,7 +65,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6"
+            className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6"
           >
             {services.map((s) => {
               const title = t.services.items[s.key].title;
@@ -74,13 +74,13 @@ export default function Services() {
                 <button
                   key={s.key}
                   onClick={() => (window.location.href = s.href)}
-                  className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-4 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 md:h-[220px] lg:h-[230px]"
+                  className="flex h-[170px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-3 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 lg:h-[230px]"
                 >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-5 sm:h-16 sm:w-16">
-                    <img src={s.icon} alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-5 sm:h-16 sm:w-16">
+                    <img src={s.icon} alt="" className="h-5 w-5 object-contain sm:h-7 sm:w-7" />
                   </div>
 
-                  <h3 className="flex min-h-[3rem] items-center justify-center text-base font-semibold leading-snug text-[#464747] sm:min-h-[3.5rem] sm:text-lg">
+                  <h3 className="flex min-h-[2.5rem] items-center justify-center text-sm font-semibold leading-tight text-[#464747] sm:min-h-[3.5rem] sm:text-lg">
                     {title}
                   </h3>
                 </button>

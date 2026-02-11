@@ -34,6 +34,14 @@ export default function Navbar() {
       currentLang === lang ? "bg-white/20" : "hover:bg-white/10"
     }`;
 
+  const mobileLangBtnClass = (lang: Language) =>
+    `px-1.5 py-0.5 text-[11px] text-white transition-colors ${
+      currentLang === lang ? "bg-white/20" : "hover:bg-white/10"
+    }`;
+
+  const mobileAppointmentLabel =
+    currentLang === "TR" ? "Randevu" : currentLang === "EN" ? "Book" : "Запись";
+
   return (
     <header className="sticky top-0 z-50 w-full bg-[#3d636d]/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center px-4 sm:h-24 sm:px-6">
@@ -46,13 +54,47 @@ export default function Navbar() {
               width={210}
               height={70}
               priority
-              className="h-auto w-[160px] object-contain sm:w-[185px] md:w-[210px]"
+              className="h-auto w-[132px] object-contain sm:w-[185px] md:w-[210px]"
             />
           </Link>
         </div>
 
         {/* RIGHT */}
-        <div className="ml-auto flex items-center gap-4 md:gap-10">
+        <div className="ml-auto flex items-center gap-2 md:gap-10">
+          {/* MOBILE LANGUAGE SWITCHER */}
+          <div className="flex overflow-hidden rounded-full border border-white/40 md:hidden">
+            <button
+              type="button"
+              className={mobileLangBtnClass("TR")}
+              onClick={() => setLang("TR")}
+            >
+              TR
+            </button>
+            <button
+              type="button"
+              className={mobileLangBtnClass("EN")}
+              onClick={() => setLang("EN")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={mobileLangBtnClass("RU")}
+              onClick={() => setLang("RU")}
+            >
+              RU
+            </button>
+          </div>
+
+          {/* MOBILE CTA */}
+          <Link
+            href="/contact"
+            className="md:hidden rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-[#3d636d] hover:bg-gray-100 min-w-[66px] text-center"
+            onClick={closeMenu}
+          >
+            {mobileAppointmentLabel}
+          </Link>
+
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-10 text-white text-base">
             <Link href="/" className="hover:opacity-80" onClick={handleHomeClick}>
@@ -117,7 +159,7 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#3d636d]/95 backdrop-blur-md">
+        <div className="absolute left-0 top-full w-full bg-[#3d636d]/95 shadow-lg backdrop-blur-md md:hidden">
           <nav className="flex flex-col px-6 py-4 space-y-4 text-white text-base">
             <Link
               href="/"
@@ -142,27 +184,6 @@ export default function Navbar() {
             </Link>
             <Link href="/contact" className="hover:opacity-80 py-2" onClick={closeMenu}>
               {t.nav.contact}
-            </Link>
-
-            {/* LANGUAGE SWITCHER (MOBILE) */}
-            <div className="flex overflow-hidden rounded-full border border-white/40 w-fit">
-              <button type="button" className={langBtnClass("TR")} onClick={() => setLang("TR")}>
-                TR
-              </button>
-              <button type="button" className={langBtnClass("EN")} onClick={() => setLang("EN")}>
-                EN
-              </button>
-              <button type="button" className={langBtnClass("RU")} onClick={() => setLang("RU")}>
-                RU
-              </button>
-            </div>
-
-            <Link
-              href="/contact"
-              className="mt-2 rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100 w-fit"
-              onClick={closeMenu}
-            >
-              {t.nav.appointment}
             </Link>
           </nav>
         </div>

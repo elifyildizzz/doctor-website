@@ -44,17 +44,17 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <section className="bg-[#f8f9fa] py-12 md:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+            <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-5 md:gap-8 lg:grid-cols-3">
               {services.map((service) => (
                 <Link key={service.key} href={service.href} className="block">
-                  <div className="flex h-full min-h-[220px] cursor-pointer flex-col rounded-2xl bg-white p-5 shadow-sm transition-shadow hover:shadow-lg md:min-h-[240px] md:p-6 lg:min-h-[250px]">
-                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf1f4] md:mb-5 md:h-16 md:w-16">
-                      <img src={service.icon} alt="" className="h-6 w-6 object-contain md:h-7 md:w-7" />
+                  <div className="flex h-full min-h-[210px] cursor-pointer flex-col rounded-2xl bg-white p-3 shadow-sm transition-shadow hover:shadow-lg sm:min-h-[220px] sm:p-4 md:min-h-[240px] md:p-6 lg:min-h-[250px]">
+                    <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-4 sm:h-12 sm:w-12 md:mb-5 md:h-16 md:w-16">
+                      <img src={service.icon} alt="" className="h-5 w-5 object-contain sm:h-6 sm:w-6 md:h-7 md:w-7" />
                     </div>
-                    <h3 className="mb-3 text-lg font-semibold text-[#464747] md:text-lg">
+                    <h3 className="mb-2 text-base font-semibold leading-tight text-[#464747] sm:mb-3 sm:text-lg">
                       {t.services.items[service.key].title}
                     </h3>
-                    <p className="flex-1 text-sm leading-6 text-[#464747]/80 md:text-sm md:leading-6 lg:text-base lg:leading-7">
+                    <p className="flex-1 text-[13px] leading-5 text-[#464747]/80 sm:text-sm sm:leading-6 lg:text-base lg:leading-7">
                       {t.services.items[service.key].desc}
                     </p>
                   </div>

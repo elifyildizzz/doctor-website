@@ -8,40 +8,40 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full overflow-hidden md:min-h-[calc(100vh-96px)]">
+    <section className="relative w-full min-h-[calc(100svh-80px)] overflow-hidden md:min-h-[calc(100vh-96px)]">
       <Image
         src="/arka_plan.png"
         alt=""
         fill
         priority
-        className="object-cover object-center scale-125"
+        className="object-cover object-center md:scale-125"
       />
 
       <div className="absolute inset-0 bg-white/40" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 sm:px-6 md:min-h-[calc(100vh-96px)] md:grid-cols-2 md:gap-10 md:py-0">
+      <div className="relative mx-auto grid min-h-[calc(100svh-80px)] max-w-7xl grid-cols-2 items-center gap-3 px-4 py-6 sm:px-6 md:min-h-[calc(100vh-96px)] md:gap-10 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-xl"
+          className="max-w-none pr-1 md:max-w-xl"
         >
-          <h1 className="text-2xl font-bold text-[#464747] sm:text-3xl md:text-[2rem]">
+          <h1 className="text-xl font-bold leading-tight text-[#464747] sm:text-3xl md:text-[2rem]">
             {t.hero.name}
           </h1>
 
-          <p className="mt-3 text-base font-semibold text-[#3d636d] sm:text-lg md:text-lg">
+          <p className="mt-2 text-sm font-semibold text-[#3d636d] sm:text-lg md:text-lg">
             {t.hero.role}
           </p>
 
-          <p className="mt-4 text-base leading-7 text-[#1F2937] md:text-base md:leading-7">
+          <p className="mt-3 text-sm leading-6 text-[#1F2937] sm:text-base md:text-base md:leading-7">
             {t.hero.desc}
           </p>
 
-          <div className="mt-6 md:mt-8">
+          <div className="mt-4 md:mt-8">
             <a
               href="#iletisim"
-              className="inline-block rounded-full bg-[#3d636d] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#345459] md:px-7 md:py-3"
+              className="inline-block rounded-full bg-[#3d636d] px-4 py-2 text-xs font-semibold text-white hover:bg-[#345459] sm:text-sm md:px-7 md:py-3"
             >
               {t.hero.cta}
             </a>
@@ -52,7 +52,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center md:justify-end items-end"
+          className="flex items-end justify-end"
         >
           <Image
             src="/doctor.png"
@@ -60,7 +60,7 @@ export default function Hero() {
             width={900}
             height={1100}
             priority
-            className="h-auto w-full max-w-[340px] object-contain sm:max-w-[420px] md:max-w-[560px] lg:max-w-[700px]"
+            className="h-auto w-full max-w-[230px] object-contain sm:max-w-[320px] md:max-w-[560px] lg:max-w-[700px]"
           />
         </motion.div>
       </div>

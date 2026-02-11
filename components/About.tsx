@@ -8,7 +8,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="doktorumuz" className="relative w-full py-10 md:min-h-screen md:py-0">
+    <section id="doktorumuz" className="relative w-full py-8 md:min-h-screen md:py-0">
       {/* BACKGROUND – HORIZONTAL SPLIT */}
       <div className="absolute inset-0">
         <div className="h-1/2 bg-[#1d5059]" />
@@ -17,7 +17,7 @@ export default function About() {
 
       {/* CONTENT */}
       <div className="relative mx-auto flex max-w-7xl items-center px-4 sm:px-6 md:min-h-screen">
-        <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-20">
+        <div className="grid w-full grid-cols-2 items-center gap-3 sm:gap-5 md:gap-10 lg:gap-20">
 
           {/* LEFT – BIG DOCTOR IMAGE */}
           <motion.div
@@ -25,7 +25,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative flex justify-center lg:justify-start"
+            className="relative flex justify-center"
           >
             <Image
               src="/doctor2.png"
@@ -33,7 +33,7 @@ export default function About() {
               width={1400}
               height={1600}
               priority
-              className="h-auto w-full max-w-[360px] object-cover sm:max-w-[460px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
+              className="h-auto w-full max-w-[220px] object-cover sm:max-w-[300px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
             />
           </motion.div>
 
@@ -45,16 +45,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-start"
           >
-            <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-3xl">
+            <h2 className="text-lg font-semibold leading-tight text-white sm:text-2xl md:text-3xl">
               {t.about.name}
             </h2>
 
-            <p className="mt-2 text-base font-medium text-white/90 sm:text-lg md:mt-3 md:text-lg">
+            <p className="mt-1 text-xs font-medium text-white/90 sm:text-base md:mt-3 md:text-lg">
               {t.about.role}
             </p>
 
-            <div className="mt-5 w-full max-w-xl rounded-2xl bg-white p-5 shadow-2xl md:mt-8 md:p-8">
-              <div className="space-y-3 text-sm leading-6 text-[#464747] md:space-y-4 md:text-base" style={{ fontFamily: 'Lumios Marker, sans-serif' }}>
+            <div className="mt-3 w-full max-w-xl rounded-2xl bg-white p-3 shadow-2xl sm:p-4 md:mt-8 md:p-8">
+              <div className="space-y-2 text-[11px] leading-4 text-[#464747] sm:text-xs sm:leading-5 md:space-y-4 md:text-base md:leading-6" style={{ fontFamily: 'Lumios Marker, sans-serif' }}>
                 <p>{t.about.p1}</p>
                 <p>{t.about.p2}</p>
                 <p>{t.about.p3}</p>
