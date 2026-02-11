@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { contactAddressByLang } from "@/data/localizedContent";
 
 type InfoCard = {
   label: string;
@@ -10,7 +11,7 @@ type InfoCard = {
 };
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { currentLang, t } = useLanguage();
 
   const cards: InfoCard[] = [
     {
@@ -25,39 +26,38 @@ export default function Contact() {
     },
     {
       label: t.contact.address,
-      value: "Antalya / Kemer (Mahalle, Sokak, No: …)",
+      value: contactAddressByLang[currentLang],
     },
   ];
 
   return (
     <section
       id="iletisim"
-      className="relative w-full min-h-[calc(100vh-96px)] bg-[#f8f9fa]"
+      className="relative w-full bg-[#f8f9fa] md:min-h-[calc(100vh-96px)]"
     >
-      <div className="mx-auto max-w-7xl px-6 py-16 md:py-20 min-h-[calc(100vh-96px)] grid items-center">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto grid max-w-7xl items-center px-4 py-12 sm:px-6 md:min-h-[calc(100vh-96px)] md:py-20">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="flex flex-col"
           >
-            <h2 className="text-4xl font-semibold text-[#464747] leading-tight">
+            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
               {t.contact.title}
             </h2>
-            <p className="mt-3 text-lg font-medium text-[#464747]/90">
+            <p className="mt-2 text-base font-medium text-[#464747]/90 md:mt-3 md:text-lg">
               {t.contact.subtitle}
             </p>
 
             <div className="mt-8 grid gap-4 sm:gap-5">
               {cards.map((c) => {
                 const CardInner = (
-                  <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-                    <p className="text-sm font-semibold text-[#3d636d]">
+                  <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm md:p-6">
+                    <p className="text-sm font-semibold text-[#3d636d] md:text-base">
                       {c.label}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-[#464747]">
+                    <p className="mt-2 text-sm font-medium text-[#464747] md:text-base">
                       {c.value}
                     </p>
                   </div>
@@ -80,13 +80,12 @@ export default function Contact() {
 
           <motion.div
             initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
             className="w-full"
           >
             <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
-              <div className="relative h-[420px] w-full md:h-[520px]">
+              <div className="relative h-[320px] w-full sm:h-[380px] md:h-[520px]">
                 <iframe
                   title={t.contact.mapTitle}
                   src="https://www.google.com/maps?q=Kemer%20Antalya&output=embed"

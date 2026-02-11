@@ -11,6 +11,13 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { currentLang, setLang, t } = useLanguage();
+  const homeAria = t.nav.home;
+  const menuToggleLabel =
+    currentLang === "TR"
+      ? "Menüyü aç veya kapat"
+      : currentLang === "EN"
+        ? "Open or close menu"
+        : "Открыть или закрыть меню";
 
   const toggleMenu = () => setIsMenuOpen((v) => !v);
 
@@ -29,23 +36,23 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#3d636d]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-24 max-w-7xl items-center px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center px-4 sm:h-24 sm:px-6">
         {/* LEFT: LOGO */}
         <div className="flex items-center">
-          <Link href="/" onClick={handleHomeClick} aria-label="Home">
+          <Link href="/" onClick={handleHomeClick} aria-label={homeAria}>
             <Image
               src="/logo2.png"
-              alt="Clinic Logo"
+              alt={t.about.name}
               width={210}
               height={70}
               priority
-              className="object-contain"
+              className="h-auto w-[160px] object-contain sm:w-[185px] md:w-[210px]"
             />
           </Link>
         </div>
 
         {/* RIGHT */}
-        <div className="ml-auto flex items-center gap-10">
+        <div className="ml-auto flex items-center gap-4 md:gap-10">
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-10 text-white text-base">
             <Link href="/" className="hover:opacity-80" onClick={handleHomeClick}>
@@ -66,7 +73,7 @@ export default function Navbar() {
           <button
             onClick={toggleMenu}
             className="md:hidden flex flex-col gap-1.5 p-2"
-            aria-label="Menüyü aç/kapat"
+            aria-label={menuToggleLabel}
           >
             <span
               className={`block w-6 h-0.5 bg-white transition-all duration-300 ${

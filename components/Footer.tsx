@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { contactAddressByLang } from "@/data/localizedContent";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { currentLang, t } = useLanguage();
   const year = new Date().getFullYear();
 
   // Eğer çeviri metninde "{year}" yoksa bile patlamasın
@@ -17,8 +18,8 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-gradient-to-r from-[#2c5f7c] to-[#3d636d] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-12">
           {/* LEFT: logo + slogan */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -30,7 +31,7 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <Image
                 src="/logo2.png"
-                alt="Uzm. Dr. Mümtaz Aktaş"
+                alt={t.about.name}
                 width={180}
                 height={60}
                 priority
@@ -107,17 +108,15 @@ export default function Footer() {
               </a>
 
               <div className="pt-3 text-sm text-white/80">
-                {/* translations.footer.address şu an "Adres" label'ı gibi.
-                    Footer'da gerçek adres metni yoksa burada sadece label gösteriyoruz. */}
                 <p>{t.footer.address}</p>
-                <p className="text-xs text-white/60">Antalya / Kemer</p>
+                <p className="text-xs text-white/60">{contactAddressByLang[currentLang]}</p>
               </div>
             </div>
           </motion.div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 border-t border-white/20 pt-8">
+        <div className="mt-12 border-t border-white/20 pt-6 md:mt-16 md:pt-8">
           <div className="flex flex-col gap-6 text-center text-sm text-white/70 md:flex-row md:justify-between md:items-center">
             <p>{copyrightText}</p>
 

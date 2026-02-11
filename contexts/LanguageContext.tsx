@@ -3,7 +3,6 @@
 import React, {
   createContext,
   useContext,
-  useEffect,
   useMemo,
   useState,
   ReactNode,
@@ -530,19 +529,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const STORAGE_KEY = "site_lang";
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [currentLang, setCurrentLang] = useState<Language>("TR");
+const getInitialLanguage = (): Language => {
+  if (typeof window === "undefined") return "TR";
+  const saved = window.localStorage.getItem(STORAGE_KEY);
+  return saved === "TR" || saved === "EN" || saved === "RU" ? saved : "TR";
+};
 
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Language | null;
-    if (saved === "TR" || saved === "EN" || saved === "RU") {
-      setCurrentLang(saved);
-    }
-  }, []);
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [currentLang, setCurrentLang] = useState<Language>(getInitialLanguage);
 
   const setLang = (lang: Language) => {
     setCurrentLang(lang);
-    localStorage.setItem(STORAGE_KEY, lang);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, lang);
+    }
   };
 
   const value = useMemo(

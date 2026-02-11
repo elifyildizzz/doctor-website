@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
-    <section id="doktorumuz" className="relative w-full min-h-screen">
+    <section id="doktorumuz" className="relative w-full py-10 md:min-h-screen md:py-0">
       {/* BACKGROUND – HORIZONTAL SPLIT */}
       <div className="absolute inset-0">
         <div className="h-1/2 bg-[#1d5059]" />
@@ -13,8 +16,8 @@ export default function About() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6">
-        <div className="grid w-full grid-cols-1 lg:grid-cols-2 items-center gap-20">
+      <div className="relative mx-auto flex max-w-7xl items-center px-4 sm:px-6 md:min-h-screen">
+        <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-20">
 
           {/* LEFT – BIG DOCTOR IMAGE */}
           <motion.div
@@ -26,15 +29,11 @@ export default function About() {
           >
             <Image
               src="/doctor2.png"
-              alt="Uzm. Dr. Mümtaz Aktaş"
+              alt={t.about.name}
               width={1400}
               height={1600}
               priority
-              className="
-                w-full
-                h-[100vh]
-                object-cover
-              "
+              className="h-auto w-full max-w-[360px] object-cover sm:max-w-[460px] md:h-[85vh] md:max-w-none lg:h-[100vh]"
             />
           </motion.div>
 
@@ -46,40 +45,20 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-start"
           >
-            {/* TITLE – WHITE + QUICKSAND */}
-            <h2 className="text-4xl font-semibold text-white leading-tight">
-              Uzm. Dr. Mümtaz Aktaş
+            <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl">
+              {t.about.name}
             </h2>
 
-            <p className="mt-3 text-xl font-medium text-white/90">
-              Çocuk Sağlığı ve Hastalıkları Uzmanı
+            <p className="mt-2 text-base font-medium text-white/90 sm:text-lg md:mt-3 md:text-xl">
+              {t.about.role}
             </p>
 
-            {/* WHITE CARD */}
-            <div className="mt-8 w-full max-w-xl rounded-2xl bg-white p-8 shadow-2xl">
-              <div className="space-y-4 text-base leading-6 text-[#464747]" style={{ fontFamily: 'Lumios Marker, sans-serif' }}>
-                <p>
-                  Tıp eğitimini Kocaeli Üniversitesi Tıp Fakültesi&apos;nde
-                  tamamlayan Mümtaz Aktaş, uzmanlık eğitimini İnönü
-                  Üniversitesi Tıp Fakültesi&apos;nde gerçekleştirmiştir.
-                </p>
-
-                <p>
-                  Yenidoğan ve prematüre bebeklerin takibi, çocukların
-                  beslenme ve büyüme gelişimi, solunum sistemi, alerji ve
-                  üriner sistem hastalıkları alanlarında hizmet vermiştir.
-                </p>
-
-                <p>
-                  Rich Hospital, Olimpos Hastanesi, Yaşam Hastanesi ve
-                  Gaziantep&apos;te çeşitli sağlık merkezlerinde görev almıştır.
-                </p>
-
-                <p>
-                  Hasta memnuniyetini ön planda tutan Dr. Aktaş, çocukların
-                  sağlıklı gelişimini desteklemek amacıyla çalışmalarını
-                  sürdürmektedir.
-                </p>
+            <div className="mt-5 w-full max-w-xl rounded-2xl bg-white p-5 shadow-2xl md:mt-8 md:p-8">
+              <div className="space-y-3 text-sm leading-6 text-[#464747] md:space-y-4 md:text-base" style={{ fontFamily: 'Lumios Marker, sans-serif' }}>
+                <p>{t.about.p1}</p>
+                <p>{t.about.p2}</p>
+                <p>{t.about.p3}</p>
+                <p>{t.about.p4}</p>
               </div>
             </div>
           </motion.div>

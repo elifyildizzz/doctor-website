@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 type WhatsAppButtonProps = {
   phoneE164?: string;
   message?: string;
@@ -7,16 +9,18 @@ type WhatsAppButtonProps = {
 
 export default function WhatsAppButton({
   phoneE164 = "900000000000",
-  message = "Merhaba, bilgi almak istiyorum.",
+  message,
 }: WhatsAppButtonProps) {
-  const href = `https://wa.me/${phoneE164}?text=${encodeURIComponent(message)}`;
+  const { t } = useLanguage();
+  const finalMessage = message ?? t.whatsapp.defaultMessage;
+  const href = `https://wa.me/${phoneE164}?text=${encodeURIComponent(finalMessage)}`;
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp ile iletişime geç"
+      aria-label={t.whatsapp.aria}
       className="
         fixed
         bottom-[calc(1.5rem+env(safe-area-inset-bottom))]

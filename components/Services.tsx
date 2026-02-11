@@ -28,9 +28,9 @@ export default function Services() {
   ];
 
   return (
-    <section id="hizmetler" className="bg-[#f8f9fa] py-16">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-2 items-start">
+    <section id="hizmetler" className="bg-[#f8f9fa] py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,15 +38,15 @@ export default function Services() {
             transition={{ duration: 0.4 }}
             className="max-w-xl"
           >
-            <h2 className="text-4xl font-semibold text-[#464747] leading-tight">
+            <h2 className="text-2xl font-semibold leading-tight text-[#464747] sm:text-3xl md:text-4xl">
               {t.services.title}
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-[#464747]/80">
+            <p className="mt-4 text-base leading-7 text-[#464747]/80 md:mt-5 md:text-lg md:leading-8">
               {t.services.p1}
             </p>
 
-            <p className="mt-4 text-lg leading-8 text-[#464747]/80">
+            <p className="mt-3 text-base leading-7 text-[#464747]/80 md:mt-4 md:text-lg md:leading-8">
               {t.services.p2}
             </p>
 
@@ -54,7 +54,7 @@ export default function Services() {
               onClick={() => {
                 window.location.href = "/services";
               }}
-              className="mt-8 rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]"
+              className="mt-6 rounded-full bg-[#3d636d] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#345459] md:mt-8 md:px-7 md:py-3"
             >
               {t.services.seeAll}
             </button>
@@ -65,7 +65,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6"
           >
             {services.map((s) => {
               const title = t.services.items[s.key].title;
@@ -74,21 +74,13 @@ export default function Services() {
                 <button
                   key={s.key}
                   onClick={() => (window.location.href = s.href)}
-                  className="
-                    flex h-[230px] flex-col items-center justify-center
-                    rounded-2xl border border-gray-200
-                    bg-white px-5
-                    text-center
-                    shadow-sm transition
-                    hover:-translate-y-1 hover:shadow-lg
-                    focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40
-                  "
+                  className="flex h-[200px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-4 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 md:h-[230px]"
                 >
-                  <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#eaf1f4]">
-                    <img src={s.icon} alt="" className="h-7 w-7 object-contain" />
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-5 sm:h-16 sm:w-16">
+                    <img src={s.icon} alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
                   </div>
 
-                  <h3 className="min-h-[3.5rem] flex items-center justify-center text-lg font-semibold text-[#464747] leading-snug">
+                  <h3 className="flex min-h-[3rem] items-center justify-center text-base font-semibold leading-snug text-[#464747] sm:min-h-[3.5rem] sm:text-lg">
                     {title}
                   </h3>
                 </button>

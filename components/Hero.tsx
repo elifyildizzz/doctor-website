@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-96px)] overflow-hidden">
+    <section className="relative w-full overflow-hidden md:min-h-[calc(100vh-96px)]">
       <Image
         src="/arka_plan.png"
         alt=""
@@ -19,29 +19,29 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-white/40" />
 
-      <div className="relative mx-auto max-w-7xl min-h-[calc(100vh-96px)] grid items-center gap-10 px-6 md:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 sm:px-6 md:min-h-[calc(100vh-96px)] md:grid-cols-2 md:gap-10 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-xl"
         >
-          <h1 className="text-3xl font-bold text-[#464747] md:text-4xl">
+          <h1 className="text-2xl font-bold text-[#464747] sm:text-3xl md:text-4xl">
             {t.hero.name}
           </h1>
 
-          <p className="mt-3 text-xl font-semibold text-[#3d636d]">
+          <p className="mt-3 text-base font-semibold text-[#3d636d] sm:text-lg md:text-xl">
             {t.hero.role}
           </p>
 
-          <p className="mt-4 text-lg leading-8 text-[#1F2937]">
+          <p className="mt-4 text-base leading-7 text-[#1F2937] md:text-lg md:leading-8">
             {t.hero.desc}
           </p>
 
-          <div className="mt-8">
+          <div className="mt-6 md:mt-8">
             <a
               href="#iletisim"
-              className="inline-block rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]"
+              className="inline-block rounded-full bg-[#3d636d] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#345459] md:px-7 md:py-3"
             >
               {t.hero.cta}
             </a>
@@ -60,7 +60,7 @@ export default function Hero() {
             width={900}
             height={1100}
             priority
-            className="w-[900px] md:w-[1000px] h-[600px] md:h-[700px] object-cover"
+            className="h-auto w-full max-w-[340px] object-contain sm:max-w-[420px] md:max-w-[560px] lg:max-w-[700px]"
           />
         </motion.div>
       </div>
@@ -70,7 +70,7 @@ export default function Hero() {
           viewBox="0 0 1440 120"
           fill="#f8f9fa"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-32 md:h-40"
+          className="h-20 w-full md:h-40"
           preserveAspectRatio="none"
         >
           <path
