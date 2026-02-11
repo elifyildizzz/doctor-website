@@ -8,13 +8,13 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full h-[calc(100svh-80px)] overflow-hidden md:h-auto md:min-h-[calc(100vh-96px)]">
+    <section className="relative -mb-px w-full h-[calc(100dvh-80px)] min-h-[calc(100svh-80px)] overflow-hidden bg-[#dfe9ee] md:h-auto md:min-h-[calc(100vh-96px)]">
       <Image
         src="/dikey_arka.png"
         alt=""
         fill
         priority
-        className="object-cover object-top md:hidden"
+        className="scale-[1.22] object-cover object-[center_42%] md:hidden"
       />
       <Image
         src="/arka_plan.png"
@@ -24,15 +24,16 @@ export default function Hero() {
         className="hidden object-cover object-center md:block md:scale-125"
       />
 
-      <div className="absolute inset-0 bg-white/15 md:bg-white/40" />
+      <div className="absolute inset-0 bg-transparent md:bg-white/40" />
+      <div className="absolute inset-x-0 top-0 h-[35%] bg-gradient-to-b from-[#5b7d88]/50 to-transparent md:hidden" />
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col px-4 pb-12 pt-6 sm:px-6 md:min-h-[calc(100vh-96px)] md:justify-center md:py-0">
-        <div className="mt-3 md:hidden">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col px-4 pb-14 pt-8 sm:px-6 md:min-h-[calc(100vh-96px)] md:justify-center md:py-0">
+        <div className="mt-1 md:hidden">
           <h1 className="text-2xl font-bold leading-tight text-[#464747]">{t.hero.name}</h1>
           <p className="mt-1 text-base font-semibold text-[#3d636d]">{t.hero.role}</p>
         </div>
 
-        <div className="mb-5 mt-2 grid flex-1 grid-cols-[1fr_1.06fr] items-end gap-2 md:mb-0 md:mt-0 md:grid-cols-2 md:items-center md:gap-10">
+        <div className="mt-1 grid grid-cols-[1fr_1.08fr] items-start gap-1 md:mt-0 md:grid-cols-2 md:items-center md:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex items-end justify-end"
+            className="-mt-2 flex items-start justify-end md:mt-0 md:items-end"
           >
             <Image
               src="/doctor.png"
@@ -73,7 +74,7 @@ export default function Hero() {
               width={900}
               height={1100}
               priority
-              className="h-auto w-[145%] max-w-none -mr-6 object-contain sm:w-full sm:max-w-[320px] md:max-w-[560px] lg:max-w-[700px]"
+              className="h-auto w-[160%] max-w-none -mr-10 object-contain sm:w-full sm:max-w-[320px] md:max-w-[560px] lg:max-w-[700px]"
             />
           </motion.div>
         </div>
@@ -84,7 +85,7 @@ export default function Hero() {
           viewBox="0 0 1440 120"
           fill="#f8f9fa"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-14 w-full md:h-40"
+          className="h-16 w-full md:h-40"
           preserveAspectRatio="none"
         >
           <path
