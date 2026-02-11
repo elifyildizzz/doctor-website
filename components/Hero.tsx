@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full min-h-[calc(100svh-80px)] overflow-hidden md:min-h-[calc(100vh-96px)]">
+    <section className="relative w-full overflow-hidden md:min-h-[calc(100vh-96px)]">
       <Image
         src="/arka_plan.png"
         alt=""
@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-white/40" />
 
-      <div className="relative mx-auto grid min-h-[calc(100svh-80px)] max-w-7xl grid-cols-2 items-center gap-3 px-4 py-6 sm:px-6 md:min-h-[calc(100vh-96px)] md:gap-10 md:py-0">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-[1fr_1.1fr] items-end gap-2 px-4 pb-8 pt-4 sm:px-6 md:min-h-[calc(100vh-96px)] md:grid-cols-2 md:items-center md:gap-10 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function Hero() {
             width={900}
             height={1100}
             priority
-            className="h-auto w-full max-w-[230px] object-contain sm:max-w-[320px] md:max-w-[560px] lg:max-w-[700px]"
+            className="h-auto w-[122%] max-w-none -mr-3 object-contain sm:w-full sm:max-w-[320px] md:max-w-[560px] lg:max-w-[700px]"
           />
         </motion.div>
       </div>
@@ -70,7 +70,7 @@ export default function Hero() {
           viewBox="0 0 1440 120"
           fill="#f8f9fa"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-20 w-full md:h-40"
+          className="h-12 w-full md:h-40"
           preserveAspectRatio="none"
         >
           <path

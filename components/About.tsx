@@ -17,7 +17,7 @@ export default function About() {
 
       {/* CONTENT */}
       <div className="relative mx-auto flex max-w-7xl items-center px-4 sm:px-6 md:min-h-screen">
-        <div className="grid w-full grid-cols-2 items-center gap-3 sm:gap-5 md:gap-10 lg:gap-20">
+        <div className="grid w-full grid-cols-[1.1fr_1fr] items-center gap-2 sm:grid-cols-2 sm:gap-5 md:gap-10 lg:gap-20">
 
           {/* LEFT – BIG DOCTOR IMAGE */}
           <motion.div
@@ -33,7 +33,7 @@ export default function About() {
               width={1400}
               height={1600}
               priority
-              className="h-auto w-full max-w-[220px] object-cover sm:max-w-[300px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
+              className="h-auto w-[138%] max-w-none object-cover sm:w-full sm:max-w-[300px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
             />
           </motion.div>
 
