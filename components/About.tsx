@@ -33,7 +33,7 @@ export default function About() {
               width={1400}
               height={1600}
               priority
-              className="h-auto w-[138%] max-w-none object-cover sm:w-full sm:max-w-[300px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
+              className="h-auto w-[152%] max-w-none object-cover sm:w-full sm:max-w-[300px] md:h-[70vh] md:max-w-none lg:h-[82vh]"
             />
           </motion.div>
 
