@@ -8,7 +8,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="doktorumuz" className="relative w-full py-8 md:min-h-screen md:py-0">
+    <section id="doktorumuz" className="relative w-full overflow-hidden py-8 md:min-h-screen md:py-0">
       {/* BACKGROUND – HORIZONTAL SPLIT */}
       <div className="absolute inset-0">
         <div className="h-1/2 bg-[#1d5059]" />
