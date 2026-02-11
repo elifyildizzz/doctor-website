@@ -261,6 +261,7 @@ const translations: Translations = {
       desc:
         "Provides scientific and reliable healthcare services for infants, children, and adolescents during diagnosis, follow-up, and treatment processes.",
       cta: "Contact",
+      slogan: '"Your children’s health is our top priority"',
     },
     services: {
       title: "Our Services",
@@ -401,6 +402,7 @@ const translations: Translations = {
       desc:
         "Оказывает научно обоснованную и надежную медицинскую помощь детям и подросткам на этапах диагностики, наблюдения и лечения.",
       cta: "Связаться",
+      slogan: '"Здоровье ваших детей — наш главный приоритет"',
     },
     services: {
       title: "Наши услуги",
