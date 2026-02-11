@@ -118,7 +118,7 @@ const translations: Translations = {
       name: "Uzm. Dr. Mümtaz Aktaş",
       role: "Çocuk Sağlığı ve Hastalıkları Uzmanı",
       desc:
-        "Bebek, çocuk ve ergen sağlığında tanı, takip ve tedavi süreçlerinde bilimsel ve güvenilir sağlık hizmeti sunmaktadır.",
+        "Bebek, çocuk ve ergen sağlığında tanı, takip ve tedavi süreçlerinde bilimsel ve güvenilir sağlık hizmeti sunulmaktadır. Antalya Kemer’deki kliniğimizde; büyüme ve gelişim takibi, koruyucu hekimlik uygulamaları ve çocukluk çağı hastalıklarının değerlendirilmesi titizlikle yürütülmektedir.",
       cta: "İletişime Geç",
       slogan: '"Çocuklarınızın sağlığı bizim için her şeyden değerlidir"',
     },
