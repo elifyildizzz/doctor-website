@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     images: [`/logo2-tight.png?v=${ASSET_VERSION}`],
   },
   verification: {
-    google: "Q3V1BBrjnqxmvxc4BYSJu3Qdjs86ObzXKuMlCcc3kpo",
+    google: "keRKy9TRLJ-ov9_AIekr5lfswWfIGsMjJhJ1hHeFjqU",
   },
   icons: {
     icon: [
