@@ -22,12 +22,46 @@ const lumiosMarker = Inter({
 });
 
 const ASSET_VERSION = "2026-03-24-7";
+const SEO_TITLE = "Antalya Çocuk Doktoru | Uzm. Dr. Mümtaz Aktaş | Kemer";
+const SEO_DESCRIPTION =
+  "Antalya Kemer çocuk doktoru Uzm. Dr. Mümtaz Aktaş ile bebek, çocuk ve ergen sağlığı takibi, aşı danışmanlığı, muayene ve randevu bilgileri.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Uzm. Dr. Mümtaz Aktaş - Çocuk Sağlığı ve Hastalıkları Uzmanı - Antalya/Kemer",
-  description:
-    "Uzm. Dr. Mümtaz Aktaş'ın Antalya Kemer'deki çocuk sağlığı ve hastalıkları uzmanı kliniği. İletişim, randevu ve klinik bilgilerine ulaşabilirsiniz.",
+  title: SEO_TITLE,
+  description: SEO_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "Antalya çocuk doktoru",
+    "Kemer çocuk doktoru",
+    "Antalya çocuk sağlığı ve hastalıkları uzmanı",
+    "Uzm. Dr. Mümtaz Aktaş",
+    "çocuk doktoru randevu Kemer",
+  ],
+  openGraph: {
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Uzm. Dr. Mümtaz Aktaş",
+    locale: "tr_TR",
+    type: "website",
+    images: [
+      {
+        url: `/logo2-tight.png?v=${ASSET_VERSION}`,
+        width: 1200,
+        height: 630,
+        alt: "Uzm. Dr. Mümtaz Aktaş",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    images: [`/logo2-tight.png?v=${ASSET_VERSION}`],
+  },
   verification: {
     google: "Q3V1BBrjnqxmvxc4BYSJu3Qdjs86ObzXKuMlCcc3kpo",
   },
