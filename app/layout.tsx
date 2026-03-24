@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { SITE_URL } from "@/data/site";
+import { contactEmail, contactPhoneE164 } from "@/data/localizedContent";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
@@ -21,15 +22,55 @@ const lumiosMarker = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const ASSET_VERSION = "2026-03-24-10";
-const SEO_TITLE = "Antalya Çocuk Doktoru | Uzm. Dr. Mümtaz Aktaş | Kemer";
+const ASSET_VERSION = "2026-03-24-7";
+const SEO_TITLE = "Uzm. Dr. Mümtaz Aktaş | Antalya Kemer Çocuk Doktoru";
 const SEO_DESCRIPTION =
   "Antalya Kemer çocuk doktoru Uzm. Dr. Mümtaz Aktaş ile bebek, çocuk ve ergen sağlığı takibi, aşı danışmanlığı, muayene ve randevu bilgileri.";
+const PHYSICIAN_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: "Uzm. Dr. Mümtaz Aktaş",
+  description: SEO_DESCRIPTION,
+  url: SITE_URL,
+  image: `${SITE_URL}/logo2-tight.png?v=${ASSET_VERSION}`,
+  telephone: `+${contactPhoneE164}`,
+  email: contactEmail,
+  medicalSpecialty: "Pediatrics",
+  availableLanguage: ["tr", "en", "ru"],
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Kemer",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Antalya",
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Yeni Mahalle, Akdeniz Caddesi 15C",
+    addressLocality: "Kemer",
+    addressRegion: "Antalya",
+    addressCountry: "TR",
+  },
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: SEO_TITLE,
   description: SEO_DESCRIPTION,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: {
     canonical: "/",
   },
@@ -63,7 +104,7 @@ export const metadata: Metadata = {
     images: [`/logo2-tight.png?v=${ASSET_VERSION}`],
   },
   verification: {
-    google: "keRKy9TRLJ-ov9_AIekr5lfswWfIGsMjJhJ1hHeFjqU",
+    google: "Q3V1BBrjnqxmvxc4BYSJu3Qdjs86ObzXKuMlCcc3kpo",
   },
   icons: {
     icon: [
@@ -104,6 +145,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lumiosMarker.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(PHYSICIAN_STRUCTURED_DATA),
+          }}
+        />
         <LanguageProvider>
           {children}
         </LanguageProvider>
