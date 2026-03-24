@@ -26,13 +26,15 @@ export const metadata: Metadata = {
   title: "Uzm. Dr. Mümtaz Aktaş - Çocuk Sağlığı ve Hastalıkları Uzmanı - Antalya/Kemer",
   description:
     "Uzm. Dr. Mümtaz Aktaş'ın Antalya Kemer'deki çocuk sağlığı ve hastalıkları uzmanı kliniği. İletişim, randevu ve klinik bilgilerine ulaşabilirsiniz.",
+  verification: {
+    google: "Q3V1BBrjnqxmvxc4BYSJu3Qdjs86ObzXKuMlCcc3kpo",
+  },
   icons: {
     icon: [
       { url: `/favicon.ico?v=${ASSET_VERSION}`, sizes: "any" },
-      { url: `/favicon-brand.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "256x256" },
     ],
     shortcut: `/favicon.ico?v=${ASSET_VERSION}`,
-    apple: `/favicon-brand.png?v=${ASSET_VERSION}`,
+    apple: `/favicon.ico?v=${ASSET_VERSION}`,
   },
 };
 
