@@ -21,7 +21,7 @@ const lumiosMarker = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const ASSET_VERSION = "2026-03-24-7";
+const ASSET_VERSION = "2026-03-24-10";
 const SEO_TITLE = "Antalya Çocuk Doktoru | Uzm. Dr. Mümtaz Aktaş | Kemer";
 const SEO_DESCRIPTION =
   "Antalya Kemer çocuk doktoru Uzm. Dr. Mümtaz Aktaş ile bebek, çocuk ve ergen sağlığı takibi, aşı danışmanlığı, muayene ve randevu bilgileri.";
