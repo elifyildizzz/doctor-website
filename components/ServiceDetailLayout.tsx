@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
-  serviceNoticeByLang,
+  serviceDetailsByLang,
   type ServiceDetailKey,
 } from "@/data/localizedContent";
 
@@ -18,7 +18,7 @@ export default function ServiceDetailLayout({
 }: ServiceDetailLayoutProps) {
   const { currentLang, t } = useLanguage();
   const title = t.services.items[serviceKey].title;
-  const paragraphs = serviceNoticeByLang[currentLang];
+  const paragraphs = serviceDetailsByLang[currentLang][serviceKey];
 
   return (
     <div className="min-h-screen bg-white">

@@ -1,5 +1,6 @@
-import ServiceDetailLayout from "@/components/ServiceDetailLayout";
+import { permanentRedirect } from "next/navigation";
+import { routes } from "@/data/routes";
 
-export default function HealthyChildMonitoringPage() {
-  return <ServiceDetailLayout serviceKey="healthyChild" />;
+export default function HealthyChildMonitoringRedirectPage() {
+  permanentRedirect(routes.healthyChild);
 }

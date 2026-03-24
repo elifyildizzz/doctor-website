@@ -1,5 +1,6 @@
-import ServiceDetailLayout from "@/components/ServiceDetailLayout";
+import { permanentRedirect } from "next/navigation";
+import { routes } from "@/data/routes";
 
-export default function VaccinationTrackingPage() {
-  return <ServiceDetailLayout serviceKey="vaccination" />;
+export default function VaccinationTrackingRedirectPage() {
+  permanentRedirect(routes.vaccination);
 }

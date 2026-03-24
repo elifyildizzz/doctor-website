@@ -1,5 +1,6 @@
-import ServiceDetailLayout from "@/components/ServiceDetailLayout";
+import { permanentRedirect } from "next/navigation";
+import { routes } from "@/data/routes";
 
-export default function PrematureBabyMonitoringPage() {
-  return <ServiceDetailLayout serviceKey="prematureBaby" />;
+export default function PrematureBabyMonitoringRedirectPage() {
+  permanentRedirect(routes.prematureBaby);
 }

@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { routes } from "@/data/routes";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -45,12 +47,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-4">
-              <a
-                href="/contact"
+              <Link
+                href={routes.contact}
                 className="inline-block rounded-full bg-[#3d636d] px-4 py-2 text-xs font-semibold text-white hover:bg-[#345459]"
               >
                 {t.hero.cta}
-              </a>
+              </Link>
             </div>
           </motion.div>
 
@@ -92,12 +94,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-8">
-            <a
-              href="/contact"
+            <Link
+              href={routes.contact}
               className="inline-block rounded-full bg-[#3d636d] px-7 py-3 text-sm font-semibold text-white hover:bg-[#345459]"
             >
               {t.hero.cta}
-            </a>
+            </Link>
           </div>
         </motion.div>
 

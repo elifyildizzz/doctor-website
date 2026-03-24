@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
+import { SITE_URL } from "@/data/site";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
@@ -23,6 +24,7 @@ const lumiosMarker = Inter({
 const ASSET_VERSION = "2026-03-24-5";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Uzm. Dr. Mümtaz Aktaş - Çocuk Sağlığı ve Hastalıkları Uzmanı - Antalya/Kemer",
   description:
     "Uzm. Dr. Mümtaz Aktaş'ın Antalya Kemer'deki çocuk sağlığı ve hastalıkları uzmanı kliniği. İletişim, randevu ve klinik bilgilerine ulaşabilirsiniz.",

@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import { routes } from "@/data/routes";
 
 const BRAND_LOGO_SRC = "/logo2-tight.png";
 
@@ -93,7 +94,7 @@ export default function Navbar() {
 
           {/* MOBILE CTA */}
           <Link
-            href="/contact"
+            href={routes.contact}
             className="md:hidden rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-[#3d636d] hover:bg-gray-100 min-w-[66px] text-center"
             onClick={closeMenu}
           >
@@ -105,13 +106,13 @@ export default function Navbar() {
             <Link href="/" className="hover:opacity-80" onClick={handleHomeClick}>
               {t.nav.home}
             </Link>
-            <Link href="/doctor" className="hover:opacity-80">
+            <Link href={routes.doctor} className="hover:opacity-80">
               {t.nav.doctor}
             </Link>
-            <Link href="/services" className="hover:opacity-80">
+            <Link href={routes.services} className="hover:opacity-80">
               {t.nav.services}
             </Link>
-            <Link href="/contact" className="hover:opacity-80">
+            <Link href={routes.contact} className="hover:opacity-80">
               {t.nav.contact}
             </Link>
           </nav>
@@ -154,7 +155,7 @@ export default function Navbar() {
 
           {/* CTA BUTTON */}
           <Link
-            href="/contact"
+            href={routes.contact}
             className="hidden md:block rounded-full bg-white px-6 py-2 text-sm font-medium text-[#3d636d] hover:bg-gray-100"
           >
             {t.nav.appointment}
@@ -174,20 +175,20 @@ export default function Navbar() {
               {t.nav.home}
             </Link>
             <Link
-              href="/doctor"
+              href={routes.doctor}
               className="hover:opacity-80 py-2 border-b border-white/20"
               onClick={closeMenu}
             >
               {t.nav.doctor}
             </Link>
             <Link
-              href="/services"
+              href={routes.services}
               className="hover:opacity-80 py-2 border-b border-white/20"
               onClick={closeMenu}
             >
               {t.nav.services}
             </Link>
-            <Link href="/contact" className="hover:opacity-80 py-2" onClick={closeMenu}>
+            <Link href={routes.contact} className="hover:opacity-80 py-2" onClick={closeMenu}>
               {t.nav.contact}
             </Link>
           </nav>
