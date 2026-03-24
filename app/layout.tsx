@@ -2,7 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { SITE_URL } from "@/data/site";
-import { contactEmail, contactPhoneE164 } from "@/data/localizedContent";
+import {
+  contactDirectionsHref,
+  contactEmail,
+  contactPhoneE164,
+} from "@/data/localizedContent";
 import {
   ASSET_VERSION,
   HOME_DESCRIPTION,
@@ -39,6 +43,7 @@ const PHYSICIAN_STRUCTURED_DATA = {
   image: OG_IMAGE_URL,
   telephone: `+${contactPhoneE164}`,
   email: contactEmail,
+  hasMap: contactDirectionsHref,
   medicalSpecialty: "Pediatrics",
   availableLanguage: ["tr", "en", "ru"],
   areaServed: [

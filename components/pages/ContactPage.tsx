@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   contactAddressByLang,
+  contactDirectionsHref,
   contactEmail,
   contactEmailHref,
   contactMapEmbedSrc,
@@ -18,6 +19,7 @@ type InfoCard = {
   label: string;
   value: string;
   href?: string;
+  external?: boolean;
 };
 
 export default function ContactPage() {
@@ -37,6 +39,8 @@ export default function ContactPage() {
     {
       label: t.contact.address,
       value: contactAddressByLang[currentLang],
+      href: contactDirectionsHref,
+      external: true,
     },
   ];
 
@@ -77,6 +81,8 @@ export default function ContactPage() {
                     <a
                       key={card.label}
                       href={card.href}
+                      target={card.external ? "_blank" : undefined}
+                      rel={card.external ? "noopener noreferrer" : undefined}
                       className="block rounded-2xl transition hover:-translate-y-[1px] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#3d636d]/30"
                     >
                       {cardInner}

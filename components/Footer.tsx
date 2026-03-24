@@ -159,14 +159,13 @@ function SocialIcon({ path }: { path: "facebook" | "twitter" | "instagram" }) {
   } as const;
 
   return (
-    <a
-      href="#"
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-      aria-label={path}
+    <span
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10"
+      aria-hidden="true"
     >
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
         <path d={paths[path]} />
       </svg>
-    </a>
+    </span>
   );
 }

@@ -13,8 +13,10 @@ export const contactPhoneE164 = "905332555361";
 export const contactPhoneHref = `tel:+${contactPhoneE164}`;
 export const contactEmail = "aktasmumtaz@yahoo.com";
 export const contactEmailHref = `mailto:${contactEmail}`;
-export const contactMapEmbedSrc =
-  "https://www.google.com/maps?q=Yeni%20Mahalle%20Akdeniz%20Caddesi%2015C%20Kemer%20Antalya&output=embed";
+export const contactLatitude = "36.596478";
+export const contactLongitude = "30.549023";
+export const contactDirectionsHref = `https://www.google.com/maps?daddr=${contactLatitude},${contactLongitude}`;
+export const contactMapEmbedSrc = `https://www.google.com/maps?q=${contactLatitude},${contactLongitude}&z=17&output=embed`;
 
 type DoctorExperienceCard = {
   title: string;

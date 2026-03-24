@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   contactAddressByLang,
+  contactDirectionsHref,
   contactEmail,
   contactEmailHref,
   contactMapEmbedSrc,
@@ -15,6 +16,7 @@ type InfoCard = {
   label: string;
   value: string;
   href?: string;
+  external?: boolean;
 };
 
 export default function Contact() {
@@ -34,6 +36,8 @@ export default function Contact() {
     {
       label: t.contact.address,
       value: contactAddressByLang[currentLang],
+      href: contactDirectionsHref,
+      external: true,
     },
   ];
 
@@ -74,6 +78,8 @@ export default function Contact() {
                   <a
                     key={c.label}
                     href={c.href}
+                    target={c.external ? "_blank" : undefined}
+                    rel={c.external ? "noopener noreferrer" : undefined}
                     className="block transition hover:-translate-y-[1px] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#3d636d]/30 rounded-2xl"
                   >
                     {CardInner}
