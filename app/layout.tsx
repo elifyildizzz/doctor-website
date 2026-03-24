@@ -21,7 +21,7 @@ const lumiosMarker = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const ASSET_VERSION = "2026-03-24-5";
+const ASSET_VERSION = "2026-03-24-7";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,10 +33,26 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: `/favicon.ico?v=${ASSET_VERSION}`, sizes: "any" },
+      {
+        url: `/favicon-32x32.png?v=${ASSET_VERSION}`,
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: `/android-chrome-192x192.png?v=${ASSET_VERSION}`,
+        type: "image/png",
+        sizes: "192x192",
+      },
+      { url: `/favicon.ico?v=${ASSET_VERSION}`, sizes: "48x48" },
     ],
     shortcut: `/favicon.ico?v=${ASSET_VERSION}`,
-    apple: `/favicon.ico?v=${ASSET_VERSION}`,
+    apple: [
+      {
+        url: `/apple-touch-icon.png?v=${ASSET_VERSION}`,
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
   },
 };
 
