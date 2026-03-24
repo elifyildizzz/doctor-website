@@ -1,5 +1,6 @@
 "use client";
 
+import { contactPhoneE164 } from "@/data/localizedContent";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 type WhatsAppButtonProps = {
@@ -8,7 +9,7 @@ type WhatsAppButtonProps = {
 };
 
 export default function WhatsAppButton({
-  phoneE164 = "900000000000",
+  phoneE164 = contactPhoneE164,
   message,
 }: WhatsAppButtonProps) {
   const { t } = useLanguage();

@@ -3,9 +3,10 @@
 import React, {
   createContext,
   useContext,
+  useEffect,
   useMemo,
-  useState,
   ReactNode,
+  useState,
 } from "react";
 
 export type Language = "TR" | "EN" | "RU";
@@ -25,6 +26,7 @@ type Translations = {
       services: string;
       contact: string;
       appointment: string;
+      appointmentShort: string;
     };
     contact: {
       title: string;
@@ -104,6 +106,7 @@ const translations: Translations = {
       services: "Hizmetler",
       contact: "İletişim",
       appointment: "Randevu Al",
+      appointmentShort: "Randevu Al",
     },
     contact: {
       title: "İletişim",
@@ -125,9 +128,9 @@ const translations: Translations = {
     services: {
       title: "Hizmetlerimiz",
       p1:
-        "Çocuğunuzun sağlıklı büyümesini sağlarken güvenli ellerde izlemi ile birlikte tanı ve tedavide gerekli olan tüm laboratuvar tetkiklerinin klinik bünyesinde yapılması sağlanmaktadır.",
+        "Hizmet bilgilerimiz şu anda hazırlık aşamasındadır.",
       p2:
-        "Özel aşıların yapılması, kan alımı, serum tedavisi, buhar tedavisine ek olarak kliniğimizden emzirme danışmanlığını da güvenle alabilirsiniz.",
+        "Yakında güncel hizmet detaylarımızı sizinle paylaşacağız.",
       seeAll: "Tüm Hizmetlerimiz",
       items: {
         healthyChild: {
@@ -176,10 +179,10 @@ const translations: Translations = {
     },
     clinic: {
       title: "Kliniğimiz",
-      location: "Antalya – Kemer",
+      location: "Yeni Mahalle, Kemer / Antalya",
       desc:
         "Kliniğimizden görüntüler. Konforlu bekleme alanı ve çocuk dostu ortam.",
-      addressLine1: "Merkez Mahallesi, Atatürk Cad. No: 45",
+      addressLine1: "Yeni Mahalle, Akdeniz Caddesi 15C",
       addressLine2: "Kemer / Antalya",
       prevAria: "Önceki fotoğraf",
       nextAria: "Sonraki fotoğraf",
@@ -236,7 +239,7 @@ const translations: Translations = {
       email: "E-posta",
       address: "Adres",
       copyright:
-        "© {year} Uzm. Dr. Mümtaz Aktaş - Antalya Kemer Çocuk Sağlığı ve Hastalıkları Uzmanı @tüm hakları saklıdır",
+        "© {year} Uzm. Dr. Mümtaz Aktaş. Tüm hakları saklıdır.",
     },
     whatsapp: {
       aria: "WhatsApp ile iletişime geç",
@@ -247,10 +250,11 @@ const translations: Translations = {
   EN: {
     nav: {
       home: "Home",
-      doctor: "Our Doctor",
+      doctor: "Doctor",
       services: "Services",
       contact: "Contact",
-      appointment: "Book Appointment",
+      appointment: "Book an Appointment",
+      appointmentShort: "Book Now",
     },
     contact: {
       title: "Contact",
@@ -262,23 +266,23 @@ const translations: Translations = {
       mapTitle: "Map",
     },
     hero: {
-      name: "Specialist Dr. Mümtaz Aktaş",
-      role: "Pediatric Health and Diseases Specialist",
+      name: "Dr. Mümtaz Aktaş",
+      role: "Pediatrician",
       desc:
-        "Scientific and reliable healthcare services are provided for infants, children, and adolescents during diagnosis, follow-up, and treatment processes. At our clinic in Antalya Kemer, growth and development follow-up, preventive medicine practices, and the evaluation of childhood diseases are carried out meticulously.",
+        "We provide evidence-based and reliable care for infants, children, and adolescents throughout diagnosis, follow-up, and treatment. At our clinic in Kemer, Antalya, we offer careful growth and development monitoring, preventive pediatric care, and evaluation of childhood illnesses.",
       cta: "Contact",
       slogan: '"Your children’s health is our top priority"',
     },
     services: {
       title: "Our Services",
       p1:
-        "While ensuring your child grows up healthy, all laboratory tests required for diagnosis and treatment can be performed within our clinic.",
+        "Our service information is currently being prepared.",
       p2:
-        "In addition to special vaccinations, blood collection, serum therapy, and nebulizer therapy, you can also receive breastfeeding consultation safely at our clinic.",
+        "We will share our updated service details with you soon.",
       seeAll: "All Our Services",
       items: {
         healthyChild: {
-          title: "Healthy Child Monitoring",
+          title: "Well-Child Follow-up",
           desc:
             "Comprehensive growth and development follow-up from newborn period to adolescence, including preventive pediatric care.",
         },
@@ -288,7 +292,7 @@ const translations: Translations = {
             "Individualized follow-up for preterm babies with developmental evaluation and feeding guidance.",
         },
         vaccination: {
-          title: "Vaccination Tracking",
+          title: "Vaccination Follow-up",
           desc:
             "Timely and safe implementation of childhood vaccines in line with national immunization schedules.",
         },
@@ -310,23 +314,23 @@ const translations: Translations = {
       },
     },
     about: {
-      name: "Specialist Dr. Mümtaz Aktaş",
-      role: "Pediatric Health and Diseases Specialist",
+      name: "Dr. Mümtaz Aktaş",
+      role: "Pediatrician",
       p1:
-        "Mümtaz Aktaş completed his medical education at Kocaeli University Faculty of Medicine and completed his residency at İnönü University Faculty of Medicine.",
+        "Mümtaz Aktaş completed his medical education at Kocaeli University Faculty of Medicine and his pediatrics residency at İnönü University Faculty of Medicine.",
       p2:
-        "He has provided care in neonatal and premature follow-up, child nutrition and growth, respiratory system, allergy, and urinary system diseases.",
+        "He has worked in newborn and premature infant follow-up, child nutrition, growth and development, as well as respiratory, allergy, and urinary system conditions.",
       p3:
         "He has worked at Rich Hospital, Olimpos Hospital, Yaşam Hospital, and various health centers in Gaziantep.",
       p4:
-        "Prioritizing patient satisfaction, Dr. Aktaş continues his work to support children’s healthy development.",
+        "Prioritizing patient satisfaction, Dr. Aktaş continues to support the healthy development of children.",
     },
     clinic: {
       title: "Our Clinic",
-      location: "Antalya – Kemer",
+      location: "Yeni Mahalle, Kemer / Antalya",
       desc:
         "Photos from our clinic. Comfortable waiting area and a child-friendly environment.",
-      addressLine1: "Merkez District, Atatürk Ave. No: 45",
+      addressLine1: "Yeni Mahalle, Akdeniz Caddesi 15C",
       addressLine2: "Kemer / Antalya",
       prevAria: "Previous photo",
       nextAria: "Next photo",
@@ -377,13 +381,13 @@ const translations: Translations = {
     },
     footer: {
       slogan: '"Your children’s health is our top priority"',
-      treatments: "Our Treatments",
+      treatments: "Services",
       contact: "Contact",
       phone: "Phone",
       email: "E-mail",
       address: "Address",
       copyright:
-        "© {year} Specialist Dr. Mümtaz Aktaş - Pediatric Health and Diseases Specialist Antalya Kemer @all rights reserved",
+        "© {year} Dr. Mümtaz Aktaş. All rights reserved.",
     },
     whatsapp: {
       aria: "Contact via WhatsApp",
@@ -394,13 +398,14 @@ const translations: Translations = {
   RU: {
     nav: {
       home: "Главная",
-      doctor: "Наш врач",
+      doctor: "Наш доктор",
       services: "Услуги",
-      contact: "Контакт",
+      contact: "Контакты",
       appointment: "Записаться",
+      appointmentShort: "Запись",
     },
     contact: {
-      title: "Контакт",
+      title: "Контакты",
       subtitle:
         "Вы можете связаться с нами через указанные ниже каналы для записи на прием и консультаций.",
       phone: "Телефон",
@@ -409,23 +414,23 @@ const translations: Translations = {
       mapTitle: "Карта",
     },
     hero: {
-      name: "Врач-специалист Мюмтаз Акташ",
-      role: "Специалист по детскому здоровью и болезням",
+      name: "Д-р Мюмтаз Акташ",
+      role: "Педиатр",
       desc:
-        "На этапах диагностики, наблюдения и лечения младенцам, детям и подросткам предоставляется научно обоснованная и надежная медицинская помощь. В нашей клинике в Анталье, Кемер, с особой тщательностью проводятся наблюдение за ростом и развитием, профилактические медицинские практики и оценка детских заболеваний.",
+        "Мы оказываем научно обоснованную и надежную медицинскую помощь младенцам, детям и подросткам на этапах диагностики, наблюдения и лечения. В нашей клинике в Кемере, Анталья, внимательно ведутся наблюдение за ростом и развитием, профилактическая педиатрия и оценка детских заболеваний.",
       cta: "Связаться",
       slogan: '"Здоровье ваших детей — наш главный приоритет"',
     },
     services: {
       title: "Наши услуги",
       p1:
-        "Для здорового роста вашего ребенка все лабораторные исследования, необходимые для диагностики и лечения, выполняются в нашей клинике.",
+        "Информация о наших услугах сейчас находится в стадии подготовки.",
       p2:
-        "Помимо специальных прививок, забора крови, инфузионной терапии и ингаляционной терапии, вы также можете безопасно получить консультацию по грудному вскармливанию.",
+        "Скоро мы поделимся с вами актуальными подробностями об услугах.",
       seeAll: "Все наши услуги",
       items: {
         healthyChild: {
-          title: "Мониторинг здорового ребенка",
+          title: "Наблюдение за здоровым ребенком",
           desc:
             "Комплексное наблюдение за ростом и развитием детей от периода новорожденности до подросткового возраста.",
         },
@@ -435,7 +440,7 @@ const translations: Translations = {
             "Индивидуальное наблюдение недоношенных детей с оценкой развития и рекомендациями по питанию.",
         },
         vaccination: {
-          title: "Отслеживание вакцинации",
+          title: "Вакцинация",
           desc:
             "Своевременная и безопасная вакцинация детей в соответствии с национальным календарем прививок.",
         },
@@ -457,23 +462,23 @@ const translations: Translations = {
       },
     },
     about: {
-      name: "Врач-специалист Мюмтаз Акташ",
-      role: "Специалист по детскому здоровью и болезням",
+      name: "Д-р Мюмтаз Акташ",
+      role: "Педиатр",
       p1:
-        "Мюмтаз Акташ окончил медицинский факультет Университета Коджаэли и прошел ординатуру на медицинском факультете Университета Инёню.",
+        "Мюмтаз Акташ окончил медицинский факультет Университета Коджаэли и прошел ординатуру по педиатрии в Университете Инёню.",
       p2:
-        "Оказывал помощь в области наблюдения новорожденных и недоношенных, питания и роста детей, заболеваний дыхательной системы, аллергии и мочевыделительной системы.",
+        "Работал в области наблюдения новорожденных и недоношенных детей, детского питания, роста и развития, а также заболеваний дыхательной, аллергической и мочевыделительной систем.",
       p3:
         "Работал в Rich Hospital, Olimpos Hospital, Yaşam Hospital и различных медицинских центрах в Газиантепе.",
       p4:
-        "Ставя удовлетворенность пациентов в приоритет, доктор Акташ продолжает работу для поддержки здорового развития детей.",
+        "Ставя удовлетворенность пациентов на первое место, доктор Акташ продолжает поддерживать здоровое развитие детей.",
     },
     clinic: {
       title: "Наша клиника",
-      location: "Анталья – Кемер",
+      location: "Yeni Mahalle, Кемер / Анталья",
       desc:
         "Фотографии нашей клиники. Уютная зона ожидания и дружелюбная для детей обстановка.",
-      addressLine1: "Район Merkez, пр-т Ататюрка, №45",
+      addressLine1: "Yeni Mahalle, Akdeniz Caddesi 15C",
       addressLine2: "Кемер / Анталья",
       prevAria: "Предыдущее фото",
       nextAria: "Следующее фото",
@@ -524,13 +529,13 @@ const translations: Translations = {
     },
     footer: {
       slogan: '"Здоровье ваших детей — наш главный приоритет"',
-      treatments: "Наши лечения",
-      contact: "Контакт",
+      treatments: "Услуги",
+      contact: "Контакты",
       phone: "Телефон",
       email: "Электронная почта",
       address: "Адрес",
       copyright:
-        "© {year} Uzm. Dr. Mümtaz Aktaş - Специалист по детскому здоровью и болезням Анталья Кемер @все права защищены",
+        "© {year} Uzm. Dr. Mümtaz Aktaş. Все права защищены.",
     },
     whatsapp: {
       aria: "Связаться через WhatsApp",
@@ -548,21 +553,36 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const STORAGE_KEY = "site_lang";
+const LANGUAGE_EVENT = "site-language-change";
 
-const getInitialLanguage = (): Language => {
-  if (typeof window === "undefined") return "TR";
-  const saved = window.localStorage.getItem(STORAGE_KEY);
-  return saved === "TR" || saved === "EN" || saved === "RU" ? saved : "TR";
-};
+const normalizeLanguage = (value: string | null): Language =>
+  value === "TR" || value === "EN" || value === "RU" ? value : "TR";
+
+const getStoredLanguage = (): Language =>
+  typeof window === "undefined" ? "TR" : normalizeLanguage(window.localStorage.getItem(STORAGE_KEY));
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [currentLang, setCurrentLang] = useState<Language>(getInitialLanguage);
+  const [currentLang, setCurrentLang] = useState<Language>("TR");
+
+  useEffect(() => {
+    const syncLanguage = () => {
+      setCurrentLang(getStoredLanguage());
+    };
+
+    syncLanguage();
+    window.addEventListener("storage", syncLanguage);
+    window.addEventListener(LANGUAGE_EVENT, syncLanguage);
+
+    return () => {
+      window.removeEventListener("storage", syncLanguage);
+      window.removeEventListener(LANGUAGE_EVENT, syncLanguage);
+    };
+  }, []);
 
   const setLang = (lang: Language) => {
+    window.localStorage.setItem(STORAGE_KEY, lang);
     setCurrentLang(lang);
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(STORAGE_KEY, lang);
-    }
+    window.dispatchEvent(new Event(LANGUAGE_EVENT));
   };
 
   const value = useMemo(

@@ -2,7 +2,14 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { contactAddressByLang } from "@/data/localizedContent";
+import {
+  contactAddressByLang,
+  contactEmail,
+  contactEmailHref,
+  contactMapEmbedSrc,
+  contactPhoneDisplay,
+  contactPhoneHref,
+} from "@/data/localizedContent";
 
 type InfoCard = {
   label: string;
@@ -16,13 +23,13 @@ export default function Contact() {
   const cards: InfoCard[] = [
     {
       label: t.contact.phone,
-      value: "+90 5xx xxx xx xx",
-      href: "tel:+905XXXXXXXXX",
+      value: contactPhoneDisplay,
+      href: contactPhoneHref,
     },
     {
       label: t.contact.email,
-      value: "info@ornekklinik.com",
-      href: "mailto:info@ornekklinik.com",
+      value: contactEmail,
+      href: contactEmailHref,
     },
     {
       label: t.contact.address,
@@ -88,7 +95,7 @@ export default function Contact() {
               <div className="relative h-[320px] w-full sm:h-[380px] md:h-[460px]">
                 <iframe
                   title={t.contact.mapTitle}
-                  src="https://www.google.com/maps?q=Kemer%20Antalya&output=embed"
+                  src={contactMapEmbedSrc}
                   width="100%"
                   height="100%"
                   loading="lazy"

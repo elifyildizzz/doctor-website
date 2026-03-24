@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
+const BRAND_LOGO_SRC = "/logo2-tight.png";
+
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
@@ -44,9 +46,6 @@ export default function Navbar() {
       currentLang === lang ? "bg-white/20" : "hover:bg-white/10"
     }`;
 
-  const mobileAppointmentLabel =
-    currentLang === "TR" ? "Randevu" : currentLang === "EN" ? "Book" : "Запись";
-
   return (
     <header className="sticky top-0 z-50 w-full bg-[#3d636d]/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center px-4 sm:h-24 sm:px-6">
@@ -54,12 +53,13 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" onClick={handleHomeClick} aria-label={homeAria}>
             <Image
-              src="/logo2.png"
+              src={BRAND_LOGO_SRC}
               alt={t.about.name}
-              width={210}
-              height={70}
+              width={3985}
+              height={1759}
               priority
-              className="h-auto w-[132px] object-contain sm:w-[185px] md:w-[210px]"
+              unoptimized
+              className="h-[56px] w-auto object-contain sm:h-[70px] md:h-[82px]"
             />
           </Link>
         </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
             className="md:hidden rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-[#3d636d] hover:bg-gray-100 min-w-[66px] text-center"
             onClick={closeMenu}
           >
-            {mobileAppointmentLabel}
+            {t.nav.appointmentShort}
           </Link>
 
           {/* DESKTOP NAV */}

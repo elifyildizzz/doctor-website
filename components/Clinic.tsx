@@ -1,28 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+const CLINIC_IMAGES = [
+  { src: "/klinik1.jpeg", position: "center 22%" },
+  { src: "/kilinik2.jpeg", position: "center 54%" },
+  { src: "/klinik3.jpeg", position: "center 50%" },
+  { src: "/klinik4.jpeg", position: "center 44%" },
+  { src: "/klinik5.jpeg", position: "center 34%" },
+  { src: "/klinik6.jpeg", position: "center 56%" },
+  { src: "/klinik7.jpeg", position: "center 48%" },
+  { src: "/klinik8.jpeg", position: "center 42%" },
+  { src: "/klinik9.jpeg", position: "center 36%" },
+  { src: "/kilinik10.jpeg", position: "center 46%" },
+  { src: "/klinik11.jpeg", position: "center 34%" },
+];
+
+const AUTO_ADVANCE_MS = 4500;
 
 export default function Clinic() {
   const { t } = useLanguage();
-  const images = useMemo(
-    () => [
-      "/klinik2.png",
-      "/klinik3.png",
-      "/klinik5.png",
-      "/klinik6.png",
-      "/klinik7.png",
-      "/klinik8.png",
-    ],
-    []
-  );
-
   const [active, setActive] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const activeImage = CLINIC_IMAGES[active];
 
-  const prev = () => setActive((i) => (i - 1 + images.length) % images.length);
-  const next = () => setActive((i) => (i + 1) % images.length);
+  const prev = () => setActive((i) => (i - 1 + CLINIC_IMAGES.length) % CLINIC_IMAGES.length);
+  const next = () => setActive((i) => (i + 1) % CLINIC_IMAGES.length);
+
+  useEffect(() => {
+    if (isPaused || CLINIC_IMAGES.length < 2) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActive((i) => (i + 1) % CLINIC_IMAGES.length);
+    }, AUTO_ADVANCE_MS);
+
+    return () => window.clearInterval(intervalId);
+  }, [isPaused]);
 
   return (
     <section
@@ -82,16 +100,33 @@ export default function Clinic() {
             className="w-full"
           >
             {/* big image */}
-            <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+            <div
+              className="relative overflow-hidden rounded-2xl bg-white shadow-xl"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <div className="relative aspect-[4/3] w-full md:aspect-[16/10]">
-                <Image
-                  src={images[active]}
-                  alt={t.clinic.photoAlt.replace("{n}", String(active + 1))}
-                  fill
-                  priority={active === 0}
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                />
+                <AnimatePresence initial={false} mode="sync">
+                  <motion.div
+                    key={activeImage.src}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={activeImage.src}
+                      alt={t.clinic.photoAlt.replace("{n}", String(active + 1))}
+                      fill
+                      priority={active === 0}
+                      className="object-cover"
+                      style={{ objectPosition: activeImage.position }}
+                      sizes="(min-width: 1024px) 560px, 100vw"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/8 via-transparent to-white/8" />
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               {/* arrows */}
@@ -115,11 +150,11 @@ export default function Clinic() {
 
             {/* thumbs */}
             <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-6">
-              {images.map((src, idx) => {
+              {CLINIC_IMAGES.map((image, idx) => {
                 const isActive = idx === active;
                 return (
                   <button
-                    key={src}
+                    key={image.src}
                     type="button"
                     onClick={() => setActive(idx)}
                     className={[
@@ -131,7 +166,7 @@ export default function Clinic() {
                   >
                     <div className="relative aspect-square w-full">
                       <Image
-                        src={src}
+                        src={image.src}
                         alt=""
                         fill
                         className="object-cover"

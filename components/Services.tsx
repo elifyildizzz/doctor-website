@@ -3,29 +3,8 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-type Service = {
-  key:
-    | "healthyChild"
-    | "prematureBaby"
-    | "vaccination"
-    | "infectionTests"
-    | "bloodLab"
-    | "breastfeeding";
-  icon: string;
-  href: string;
-};
-
 export default function Services() {
   const { t } = useLanguage();
-
-  const services: Service[] = [
-    { key: "healthyChild", icon: "/icons/baby.svg", href: "/services/healthy-child-monitoring" },
-    { key: "prematureBaby", icon: "/icons/feeder.svg", href: "/services/premature-baby-monitoring" },
-    { key: "vaccination", icon: "/icons/needle.svg", href: "/services/vaccination-tracking" },
-    { key: "infectionTests", icon: "/icons/tube.svg", href: "/services/infection-tests" },
-    { key: "bloodLab", icon: "/icons/drop.svg", href: "/services/blood-collection-laboratory" },
-    { key: "breastfeeding", icon: "/icons/mom.svg", href: "/services/breastfeeding-consultation" },
-  ];
 
   return (
     <section id="hizmetler" className="bg-[#f8f9fa] py-12 md:py-16">
@@ -49,15 +28,6 @@ export default function Services() {
             <p className="mt-3 text-base leading-7 text-[#464747]/80 md:mt-4 md:text-base md:leading-7">
               {t.services.p2}
             </p>
-
-            <button
-              onClick={() => {
-                window.location.href = "/services";
-              }}
-              className="mt-6 rounded-full bg-[#3d636d] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#345459] md:mt-8 md:px-7 md:py-3"
-            >
-              {t.services.seeAll}
-            </button>
           </motion.div>
 
           <motion.div
@@ -65,27 +35,19 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6"
+            className="flex h-full min-h-[240px] items-center"
           >
-            {services.map((s) => {
-              const title = t.services.items[s.key].title;
+            <div className="w-full rounded-[28px] border border-[#d9e5e8] bg-white p-8 text-center shadow-sm sm:p-10">
+              <div className="mx-auto flex w-fit items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#3d636d]/30" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#3d636d]/45" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#3d636d]/60" />
+              </div>
 
-              return (
-                <button
-                  key={s.key}
-                  onClick={() => (window.location.href = s.href)}
-                  className="flex h-[170px] flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white px-3 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d636d]/40 sm:h-[220px] sm:px-5 lg:h-[230px]"
-                >
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#eaf1f4] sm:mb-5 sm:h-16 sm:w-16">
-                    <img src={s.icon} alt="" className="h-5 w-5 object-contain sm:h-7 sm:w-7" />
-                  </div>
-
-                  <h3 className="flex min-h-[2.5rem] items-center justify-center text-sm font-semibold leading-tight text-[#464747] sm:min-h-[3.5rem] sm:text-lg">
-                    {title}
-                  </h3>
-                </button>
-              );
-            })}
+              <p className="mx-auto mt-6 max-w-md text-base leading-7 text-[#464747]/80">
+                {t.services.p2}
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

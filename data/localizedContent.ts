@@ -8,6 +8,14 @@ export type ServiceDetailKey =
   | "bloodLab"
   | "breastfeeding";
 
+export const contactPhoneDisplay = "0533 255 53 61";
+export const contactPhoneE164 = "905332555361";
+export const contactPhoneHref = `tel:+${contactPhoneE164}`;
+export const contactEmail = "aktasmumtaz@yahoo.com";
+export const contactEmailHref = `mailto:${contactEmail}`;
+export const contactMapEmbedSrc =
+  "https://www.google.com/maps?q=Yeni%20Mahalle%20Akdeniz%20Caddesi%2015C%20Kemer%20Antalya&output=embed";
+
 type DoctorExperienceCard = {
   title: string;
   items: string[];
@@ -20,10 +28,25 @@ type DoctorExperienceContent = {
 
 type ServiceDetailContent = Record<ServiceDetailKey, string[]>;
 
+export const serviceNoticeByLang: Record<Language, string[]> = {
+  TR: [
+    "Hizmet bilgilerimiz şu anda hazırlık aşamasındadır.",
+    "Yakında güncel hizmet detaylarımızı sizinle paylaşacağız.",
+  ],
+  EN: [
+    "Our service information is currently being prepared.",
+    "We will share our updated service details with you soon.",
+  ],
+  RU: [
+    "Информация о наших услугах сейчас находится в стадии подготовки.",
+    "Скоро мы поделимся с вами актуальными подробностями об услугах.",
+  ],
+};
+
 export const contactAddressByLang: Record<Language, string> = {
-  TR: "Antalya / Kemer (Mahalle, Sokak, No: ...)",
-  EN: "Antalya / Kemer (Neighborhood, Street, No: ...)",
-  RU: "Анталья / Кемер (район, улица, дом: ...)",
+  TR: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
+  EN: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
+  RU: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
 };
 
 export const doctorExperienceByLang: Record<Language, DoctorExperienceContent> = {
@@ -34,7 +57,7 @@ export const doctorExperienceByLang: Record<Language, DoctorExperienceContent> =
         title: "Eğitim",
         items: [
           "Kocaeli Üniversitesi Tıp Fakültesi",
-          "İnönü Üniversitesi Çocuk Sağlığı ve Hastalıkları Uzmanlık",
+          "İnönü Üniversitesi Çocuk Sağlığı ve Hastalıkları Uzmanlığı",
         ],
       },
       {
@@ -69,7 +92,7 @@ export const doctorExperienceByLang: Record<Language, DoctorExperienceContent> =
         title: "Areas of Expertise",
         items: [
           "Premature Baby Follow-up",
-          "Vaccination Practice",
+          "Vaccination Services",
           "Growth and Development Monitoring",
         ],
       },

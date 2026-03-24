@@ -1,10 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { contactAddressByLang } from "@/data/localizedContent";
+import {
+  contactAddressByLang,
+  contactEmail,
+  contactEmailHref,
+  contactPhoneDisplay,
+  contactPhoneHref,
+} from "@/data/localizedContent";
+
+const BRAND_LOGO_SRC = "/logo2-tight.png";
 
 export default function Footer() {
   const { currentLang, t } = useLanguage();
@@ -30,12 +37,13 @@ export default function Footer() {
           >
             <div className="flex items-center gap-4">
               <Image
-                src="/logo2.png"
+                src={BRAND_LOGO_SRC}
                 alt={t.about.name}
-                width={230}
-                height={77}
+                width={3985}
+                height={1759}
                 priority
-                className="h-auto w-[210px] object-contain sm:w-[230px]"
+                unoptimized
+                className="h-[62px] w-auto object-contain sm:h-[72px]"
               />
             </div>
 
@@ -52,32 +60,14 @@ export default function Footer() {
           >
             <h3 className="text-lg font-semibold mb-4">{t.footer.treatments}</h3>
 
-            <nav className="grid grid-cols-2 gap-3">
-              <FooterLink
-                href="/services/healthy-child-monitoring"
-                label={t.services.items.healthyChild.title}
-              />
-              <FooterLink
-                href="/services/premature-baby-monitoring"
-                label={t.services.items.prematureBaby.title}
-              />
-              <FooterLink
-                href="/services/vaccination-tracking"
-                label={t.services.items.vaccination.title}
-              />
-              <FooterLink
-                href="/services/infection-tests"
-                label={t.services.items.infectionTests.title}
-              />
-              <FooterLink
-                href="/services/blood-collection-laboratory"
-                label={t.services.items.bloodLab.title}
-              />
-              <FooterLink
-                href="/services/breastfeeding-consultation"
-                label={t.services.items.breastfeeding.title}
-              />
-            </nav>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <span
+                  key={index}
+                  className="h-2.5 w-2.5 rounded-full bg-white/35"
+                />
+              ))}
+            </div>
           </motion.div>
 
           {/* RIGHT: contact */}
@@ -92,19 +82,19 @@ export default function Footer() {
 
             <div className="space-y-3">
               <a
-                href="tel:+905XXXXXXXXX"
+                href={contactPhoneHref}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
               >
                 <IconPhone />
-                +90 5xx xxx xx xx
+                {contactPhoneDisplay}
               </a>
 
               <a
-                href="mailto:info@ornekklinik.com"
+                href={contactEmailHref}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
               >
                 <IconMail />
-                info@ornekklinik.com
+                {contactEmail}
               </a>
 
               <div className="pt-3 text-sm text-white/80">
@@ -129,20 +119,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-/* ---------- helpers ---------- */
-
-function FooterLink({ href, label }: { href: string; label: string }) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
-    >
-      <span className="w-2 h-2 rounded-full bg-white/20 group-hover:bg-white/40" />
-      {label}
-    </Link>
   );
 }
 
