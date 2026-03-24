@@ -3,6 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { SITE_URL } from "@/data/site";
 import { contactEmail, contactPhoneE164 } from "@/data/localizedContent";
+import {
+  ASSET_VERSION,
+  HOME_DESCRIPTION,
+  HOME_TITLE,
+  OG_IMAGE_URL,
+  SITE_NAME,
+  buildPageMetadata,
+} from "@/data/seo";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
@@ -22,17 +30,13 @@ const lumiosMarker = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const ASSET_VERSION = "2026-03-24-7";
-const SEO_TITLE = "Uzm. Dr. Mümtaz Aktaş | Antalya Kemer Çocuk Doktoru";
-const SEO_DESCRIPTION =
-  "Antalya Kemer çocuk doktoru Uzm. Dr. Mümtaz Aktaş ile bebek, çocuk ve ergen sağlığı takibi, aşı danışmanlığı, muayene ve randevu bilgileri.";
 const PHYSICIAN_STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  name: "Uzm. Dr. Mümtaz Aktaş",
-  description: SEO_DESCRIPTION,
+  name: SITE_NAME,
+  description: HOME_DESCRIPTION,
   url: SITE_URL,
-  image: `${SITE_URL}/logo2-tight.png?v=${ASSET_VERSION}`,
+  image: OG_IMAGE_URL,
   telephone: `+${contactPhoneE164}`,
   email: contactEmail,
   medicalSpecialty: "Pediatrics",
@@ -58,8 +62,11 @@ const PHYSICIAN_STRUCTURED_DATA = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: SEO_TITLE,
-  description: SEO_DESCRIPTION,
+  ...buildPageMetadata({
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    path: "/",
+  }),
   robots: {
     index: true,
     follow: true,
@@ -70,38 +77,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
-  },
-  alternates: {
-    canonical: "/",
-  },
-  keywords: [
-    "Antalya çocuk doktoru",
-    "Kemer çocuk doktoru",
-    "Antalya çocuk sağlığı ve hastalıkları uzmanı",
-    "Uzm. Dr. Mümtaz Aktaş",
-    "çocuk doktoru randevu Kemer",
-  ],
-  openGraph: {
-    title: SEO_TITLE,
-    description: SEO_DESCRIPTION,
-    url: SITE_URL,
-    siteName: "Uzm. Dr. Mümtaz Aktaş",
-    locale: "tr_TR",
-    type: "website",
-    images: [
-      {
-        url: `/logo2-tight.png?v=${ASSET_VERSION}`,
-        width: 1200,
-        height: 630,
-        alt: "Uzm. Dr. Mümtaz Aktaş",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: SEO_TITLE,
-    description: SEO_DESCRIPTION,
-    images: [`/logo2-tight.png?v=${ASSET_VERSION}`],
   },
   verification: {
     google: "Q3V1BBrjnqxmvxc4BYSJu3Qdjs86ObzXKuMlCcc3kpo",
