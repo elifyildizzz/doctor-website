@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Uzm. Dr. Mumtaz Aktas - Clinic Website**
 
-## Getting Started
+### Project Overview
+This project is a multilingual (TR/EN/RU) Next.js website built for a pediatric clinic in Antalya/Kemer.
 
-First, run the development server:
+Main sections include:
+- Doctor profile
+- Services and service detail pages
+- Clinic gallery
+- Contact and map section
+- Google Business profile actions
+
+### Tech Stack
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Framer Motion
+
+### Local Development
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### NPM Scripts
+```bash
+npm run dev    # Development mode
+npm run lint   # ESLint checks
+npm run build  # Production build
+npm run start  # Production server
+```
 
-## Learn More
+### Project Structure
+```text
+app/         -> Routes and pages
+components/  -> UI components
+contexts/    -> Language state management
+data/        -> Content, SEO, and route data
+public/      -> Static assets (images/icons)
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Content Update Guide
+- Contact info and map links: `data/localizedContent.ts`
+- UI translations: `contexts/LanguageContext.tsx`
+- SEO metadata: `data/seo.ts`
+- Route paths: `data/routes.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Maps and Google Business
+In the contact section:
+- Clicking the map opens the Google Maps location
+- Profile/review actions open the Google Business profile
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Related configuration: `data/localizedContent.ts`
 
-## Deploy on Vercel
+### Deployment
+For production:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm run start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is directly deployable on Vercel (standard Next.js setup).
