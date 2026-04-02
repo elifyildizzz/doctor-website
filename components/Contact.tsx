@@ -8,6 +8,7 @@ import {
   contactEmail,
   contactEmailHref,
   contactGoogleBusinessHref,
+  contactGoogleReviewsHref,
   contactLocationHref,
   contactMapEmbedSrc,
   contactPhoneDisplay,
@@ -47,7 +48,7 @@ export default function Contact() {
     {
       label: businessContent.reviewCardTitle,
       value: businessContent.reviewCardText,
-      href: contactGoogleBusinessHref,
+      href: contactGoogleReviewsHref,
       external: true,
       ctaLabel: businessContent.reviewButton,
     },

@@ -15,6 +15,8 @@ export const contactEmail = "aktasmumtaz@yahoo.com";
 export const contactEmailHref = `mailto:${contactEmail}`;
 export const contactBusinessName = "Uzm. Dr. Mümtaz Aktaş";
 export const contactGoogleBusinessHref = "https://share.google/vAjWIG1MuEW1r4XGk";
+export const contactGoogleReviewsHref =
+  "https://www.google.com/search?sca_esv=483bff7be855fde4&hl=tr-TR&sxsrf=ANbL-n5iWXBiJDarMnv7H7eMj6VjWPo0SQ:1775130286629&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeEDMKoS4jIOmjahSFI7yzBWDdwCEa8nMs12X138NjzRc74cyG7dlDWAcT11VANmgz6tvti6bLmvkDQ1N-_OF-slbCaGCK2bk35CHojZnW0f4wFp9A%3D%3D&q=Uzm.Dr.Mümtaz+Aktaş+Yorumlar&sa=X&ved=2ahUKEwj13qTRi8-TAxWSAtsEHWUvF-QQ0bkNegQIHRAH&biw=1440&bih=797&dpr=2";
 export const contactAddress = "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya";
 // 36°35'47.3"N 30°32'56.5"E
 export const contactLatitude = "36.596472";

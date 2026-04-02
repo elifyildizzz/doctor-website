@@ -65,13 +65,3 @@ In the contact section:
 - Profile/review actions open the Google Business profile
 
 Related configuration: `data/localizedContent.ts`
-
-### Deployment
-For production:
-
-```bash
-npm run build
-npm run start
-```
-
-The project is directly deployable on Vercel (standard Next.js setup).
