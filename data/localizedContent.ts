@@ -13,10 +13,51 @@ export const contactPhoneE164 = "905332555361";
 export const contactPhoneHref = `tel:+${contactPhoneE164}`;
 export const contactEmail = "aktasmumtaz@yahoo.com";
 export const contactEmailHref = `mailto:${contactEmail}`;
-export const contactLatitude = "36.596478";
-export const contactLongitude = "30.549023";
-export const contactDirectionsHref = `https://www.google.com/maps?daddr=${contactLatitude},${contactLongitude}`;
+export const contactBusinessName = "Uzm. Dr. Mümtaz Aktaş";
+export const contactGoogleBusinessHref = "https://share.google/vAjWIG1MuEW1r4XGk";
+export const contactAddress = "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya";
+// 36°35'47.3"N 30°32'56.5"E
+export const contactLatitude = "36.596472";
+export const contactLongitude = "30.549028";
+export const contactMapsLocationQuery = "Uzm.Dr.Mümtaz Aktaş";
+const contactMapsLocationQueryEncoded = encodeURIComponent(contactMapsLocationQuery);
+const contactMapsBusinessIdEncoded = encodeURIComponent("/g/11nbjjz18z");
+
+export const contactLocationHref = `https://www.google.com/maps/search/?api=1&query=${contactMapsLocationQueryEncoded}&query_place_id=${contactMapsBusinessIdEncoded}`;
+export const contactDirectionsHref = `https://www.google.com/maps/dir/?api=1&destination=${contactLatitude},${contactLongitude}`;
 export const contactMapEmbedSrc = `https://www.google.com/maps?q=${contactLatitude},${contactLongitude}&z=17&output=embed`;
+
+type GoogleBusinessContent = {
+  reviewCardTitle: string;
+  reviewCardText: string;
+  reviewButton: string;
+  profileButton: string;
+  directionsButton: string;
+};
+
+export const googleBusinessContentByLang: Record<Language, GoogleBusinessContent> = {
+  TR: {
+    reviewCardTitle: "Yorumlarınız Bizim İçin Değerli",
+    reviewCardText: "Deneyiminizi bizimle paylaşmak isterseniz yorum bırakabilirsiniz.",
+    reviewButton: "Yorum Yap",
+    profileButton: "Profili Aç",
+    directionsButton: "Konumu Aç",
+  },
+  EN: {
+    reviewCardTitle: "Your Feedback Matters",
+    reviewCardText: "You can share your experience with a quick review.",
+    reviewButton: "Write a Review",
+    profileButton: "Open Profile",
+    directionsButton: "Open Location",
+  },
+  RU: {
+    reviewCardTitle: "Ваши отзывы важны для нас",
+    reviewCardText: "Если хотите, вы можете оставить короткий отзыв.",
+    reviewButton: "Оставить отзыв",
+    profileButton: "Открыть профиль",
+    directionsButton: "Открыть место",
+  },
+};
 
 type DoctorExperienceCard = {
   title: string;
@@ -46,9 +87,9 @@ export const serviceNoticeByLang: Record<Language, string[]> = {
 };
 
 export const contactAddressByLang: Record<Language, string> = {
-  TR: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
-  EN: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
-  RU: "Yeni Mahalle, Akdeniz Caddesi 15C, Kemer / Antalya",
+  TR: contactAddress,
+  EN: contactAddress,
+  RU: contactAddress,
 };
 
 export const doctorExperienceByLang: Record<Language, DoctorExperienceContent> = {

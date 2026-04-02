@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { SITE_URL } from "@/data/site";
 import {
-  contactDirectionsHref,
   contactEmail,
+  contactLocationHref,
   contactPhoneE164,
 } from "@/data/localizedContent";
 import {
@@ -17,6 +17,7 @@ import {
 } from "@/data/seo";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import ScrollToTopOnReload from "@/components/ScrollToTopOnReload";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,7 @@ const PHYSICIAN_STRUCTURED_DATA = {
   image: OG_IMAGE_URL,
   telephone: `+${contactPhoneE164}`,
   email: contactEmail,
-  hasMap: contactDirectionsHref,
+  hasMap: contactLocationHref,
   medicalSpecialty: "Pediatrics",
   availableLanguage: ["tr", "en", "ru"],
   areaServed: [
@@ -132,6 +133,7 @@ export default function RootLayout({
           }}
         />
         <LanguageProvider>
+          <ScrollToTopOnReload />
           {children}
         </LanguageProvider>
       </body>
