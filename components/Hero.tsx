@@ -5,11 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { routes } from "@/data/routes";
-import { HOME_TITLE } from "@/data/seo";
 
 export default function Hero() {
-  const { currentLang, t } = useLanguage();
-  const heroHeading = currentLang === "TR" ? HOME_TITLE : t.hero.name;
+  const { t } = useLanguage();
 
   return (
     <section className="relative w-full h-[calc(100dvh-80px)] min-h-[calc(100svh-80px)] overflow-hidden md:h-auto md:min-h-[calc(100vh-96px)]">
@@ -33,7 +31,7 @@ export default function Hero() {
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col px-4 pb-14 pt-8 sm:px-6 md:hidden">
         <div className="mt-1 md:hidden">
-          <h1 className="text-2xl font-bold leading-tight text-[#464747]">{heroHeading}</h1>
+          <h1 className="text-2xl font-bold leading-tight text-[#464747]">{t.hero.name}</h1>
           <p className="mt-1 text-base font-semibold text-[#3d636d]">{t.hero.role}</p>
         </div>
 
@@ -84,7 +82,7 @@ export default function Hero() {
           className="max-w-xl"
         >
           <h1 className="text-3xl font-bold leading-tight text-[#464747] md:text-[2rem]">
-            {heroHeading}
+            {t.hero.name}
           </h1>
 
           <p className="mt-2 text-lg font-semibold text-[#3d636d] md:text-lg">
